@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'tip_group_id', 'first_name', 'last_name', 'username', 'email', 'password', 'mobile_phone', 'telephone', 'street', 'post_code', 'place', 'points'
     ];
 
     /**
@@ -36,4 +36,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tipGroup()
+    {
+        return $this->hasOne(TipGroup::class);
+    }
+
+    public function prediction() {
+        return $this->hasMany('App\Prediction');
+    }
 }
