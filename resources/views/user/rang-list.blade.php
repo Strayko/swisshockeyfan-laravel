@@ -17,7 +17,7 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($sortedUsers as $user)
+                            @foreach($users as $user)
                                 <tr>
                                     <td>{{ ++$count }}</td>
                                     <td>{{ $user->first_name }}</td>
@@ -27,6 +27,7 @@
                             @endforeach
                             </tbody>
                         </table>
+                        {{ $users->links() }}
                     </div>
                 </div>
             </div>
@@ -34,9 +35,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Sidebar') }}</div>
                     <div class="card-body">
-                        <ul>
-                            <li><a href="/user/tip-group-list">{{ __('Tip Group List') }}</a></li>
-                        </ul>
+                        @include('includes.sidebar')
                     </div>
                 </div>
             </div>

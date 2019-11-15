@@ -34,9 +34,7 @@
                 <div class="card">
                     <div class="card-header">{{ __('Sidebar') }}</div>
                     <div class="card-body">
-                        <ul>
-                            <li><a href="/user/tip-group-user-list">Individual Tip Group List</a></li>
-                        </ul>
+                        @include('includes.sidebar')
                     </div>
                 </div>
             </div>

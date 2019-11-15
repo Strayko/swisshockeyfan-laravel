@@ -25,7 +25,7 @@ Route::post('/user/{user}', 'UserController@update')->name('user.update');
 Route::get('/user/{user}/predictions', 'UserController@predictions')->name('user.predictions');
 Route::get('/user/rang-list', 'UserController@rangList')->name('user.rang-list');
 Route::get('/user/tip-group-list', 'UserController@tipGroupList')->name('user.tip-group-list');
-Route::get('/user/tip-group-user-list', 'UserController@tipGroupUserList');
+Route::get('/user/tip-group-user-list', 'UserController@tipGroupUserList')->name('user.tip-group-user-list');
 Route::get('/user/tip-group/{id}', 'UserController@tipGroupUsers');
 
 Route::get('/tip-group', 'TipGroupController@index')->name('tip-group.index');
@@ -33,4 +33,10 @@ Route::patch('/tip-group/{id}', 'TipGroupController@update')->name('tip-group.up
 
 
 Route::resource('/prediction', 'PredictionController');
-Route::resource('/match', 'MatchController');
+
+
+
+Route::group(['middleware' => 'admin'], function() {
+    Route::resource('/adding-match', 'AddingMatchController');
+    Route::resource('/match', 'MatchController');
+});
