@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <h1>Index</h1>
+
     @if(session()->has('error'))
         <p>{{session()->get('error')}}</p>
     @endif
