@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Notifications\ResetPassword;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,5 +45,18 @@ class User extends Authenticatable
 
     public function prediction() {
         return $this->hasMany('App\Prediction');
+    }
+
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPassword($token));
+    }
+
+    public function isAdmin() {
+        if($this->role == 1) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
