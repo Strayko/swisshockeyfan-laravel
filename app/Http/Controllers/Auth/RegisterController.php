@@ -28,7 +28,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/login';
 
     /**
      * Create a new controller instance.
@@ -55,7 +55,6 @@ class RegisterController extends Controller
             'email'         => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password'      => ['required', 'string', 'min:8', 'confirmed'],
             'mobile_phone'  => ['required', 'string', 'max:255'],
-            'telephone'     => ['required', 'string', 'max:255'],
             'street'        => ['required', 'string', 'max:255'],
             'post_code'     => ['required', 'string', 'max:255'],
             'place'         => ['required', 'string', 'max:255'],
