@@ -53,7 +53,7 @@
           <ul class="navbar-nav main-menu ml-auto">
                 <!-- <li class="active"><a href="index.html">Home</a></li> -->
                 <li><a href="{{ route('prediction.index') }}">Spielplan / Tippabgabe</a></li>
-                <li class="menu_has_children"><a href="promotion.html">Rangliste</a>
+                <li class="menu_has_children"><a href="#">Rangliste</a>
                     <ul class="sub-menu">
                         <li><a href="{{ route('user.rang-list') }}">Rangliste Einzeln</a></li>
                         <li><a href="{{ route('user.tip-group-list') }}">Rangliste Tippgroupen</a></li>
@@ -63,14 +63,16 @@
                 @else
                 <li><a href="{{ route('tip-group.index') }}">Tippgroupe</a></li>
                 @endguest
-                <li><a href="result.html">Spielregeln</a></li>
-                <li class="menu_has_children"><a href="#0">pages</a>
+                <li><a href="#">Spielregeln</a></li>
+                <li class="menu_has_children"><a href="#">Preise</a>
                     <ul class="sub-menu">
-                        <li><a href="about.html">Sponsoren</a></li>
-                        <li><a href="service.html">Kontakt / Impressum</a></li>
+                        <li><a href="#">Einzelspieler Gesamt</a></li>
+                        <li><a href="#">Monatspreise</a></li>
+                        <li><a href="#">Special Weekend</a></li>
+                        <li><a href="#">Tippgruppen</a></li>
                     </ul>
                 </li>
-                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="#">Kontakt</a></li>
                 @guest
                 <li class="login-register">
                     <a href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -94,7 +96,7 @@
                         </form>
                     </ul>
                 </li>
-                @endguest   
+                @endguest
             </ul>
           </div>
         </nav>

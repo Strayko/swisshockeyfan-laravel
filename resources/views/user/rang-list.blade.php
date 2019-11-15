@@ -84,7 +84,7 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            @foreach($sortedUsers as $user)
+                                            @foreach($users as $user)
                                             <tr>
                                                 <td>
                                                    <div class="team-name-part">
@@ -96,7 +96,7 @@
                                                 <td>
                                                     <div class="team-name-part">
                                                     {{ $user->last_name }}
-                                                    </div>    
+                                                    </div>
                                                 </td>
                                                 <td> <div class="team-name-part" style="font-weight:800; font-size:18px">
                                                 {{ $user->points }}
