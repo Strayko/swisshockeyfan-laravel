@@ -6,7 +6,7 @@
     @endif
     <div>
         <ul>
-            <li><a href="">All</a></li>
+            <li><a href="">All2</a></li>
             <li><a href="">Novembar</a></li>
             <li><a href="">Decembar</a></li>
         </ul>
