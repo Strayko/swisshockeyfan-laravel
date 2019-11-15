@@ -20,11 +20,11 @@
                                 <table class="table table-bordered">
                                     <thead>
                                         <tr>
-                                            <th>Home Team</th>
-                                            <th>Home Team Score</th>
-                                            <th>Away Team</th>
-                                            <th>Away Team Score</th>
-                                            <th>Points</th>
+                                            <th>{{ __('Home Team') }}</th>
+                                            <th>{{ __('Home Team Score') }}</th>
+                                            <th>{{ __('Away Team') }}</th>
+                                            <th>{{ __('Away Team Score') }}</th>
+                                            <th>{{ __('Points') }}</th>
                                         </tr>
                                     </thead>
                                     <tr>
@@ -46,7 +46,14 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">{{ __('Sidebar') }}</div>
+                    <div class="card-body">
+                        @include('includes.sidebar')
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 @endsection

@@ -6,6 +6,7 @@ use App\User;
 use App\TipGroup;
 use App\Prediction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -67,7 +68,7 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id);
+        $user = User::findOrFail($id == Auth::id());
         $tipGroups = TipGroup::all();
         return view('user.edit', compact('user', 'tipGroups'));
     }
@@ -85,13 +86,21 @@ class UserController extends Controller
             'first_name'    => ['required', 'string', 'max:255'],
             'last_name'     => ['required', 'string', 'max:255'],
             'mobile_phone'  => ['required', 'string', 'max:255'],
-            'telephone'     => ['required', 'string', 'max:255'],
             'street'        => ['required', 'string', 'max:255'],
             'post_code'     => ['required', 'string', 'max:255'],
             'place'         => ['required', 'string', 'max:255'],
         ]);
 
         $user = User::findOrFail($id);
+
+        // Update User password
+        if ($request['password'] !== null) {
+            $this->validate($request, [
+                'password' => ['min:8', 'confirmed']
+            ]);
+            $password = Hash::make($request['password']);
+            $user->update(['password' => $password]);
+        }
 
         $user->tip_group_id = isset($request['tip_group']) ? $request['tip_group'] : $user->tip_group_id;
         $user->first_name = $request['first_name'];
@@ -102,9 +111,14 @@ class UserController extends Controller
         $user->post_code = $request['post_code'];
         $user->place = $request['place'];
 
-        $user->save();
+        if ($user->id == Auth::id()) {
+            $user->save();
+        } else {
+            return redirect()->route('user.edit', ['id' => $id])->with('error', 'You don\'t have permission to edit user!');
+        }
 
         return redirect()->route('user.edit', ['id' => $id])->with('success', 'Profile Updated Successfully!');
+
     }
 
     /**
@@ -135,10 +149,9 @@ class UserController extends Controller
 
     public function rangList()
     {
-        $users = User::all();
+        $users = User::orderBy('points', 'DESC')->paginate(1);
         $count = 0;
-        $sortedUsers = $users->sortByDesc('points');
-        return view('user.rang-list', compact('sortedUsers', 'count'));
+        return view('user.rang-list', compact('users', 'count'));
     }
 
     public function tipGroupList()
@@ -159,9 +172,13 @@ class UserController extends Controller
             );
         }
 
-        arsort($userPoints);
+        if (!empty($userPoints)) {
+            arsort($userPoints);
+        } else {
+            $userPoints = array();
+        }
 
-        return view('user.tip-group-list', compact('tipGroups', 'count', 'userPoints'));
+        return view('user.tip-group-list', compact('count', 'userPoints'));
     }
 
     public function tipGroupUserList()

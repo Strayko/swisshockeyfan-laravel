@@ -19,7 +19,7 @@ class CreatePredictionsTable extends Migration
             $table->integer('match_id');
             $table->integer('home_score');
             $table->integer('away_score');
-            $table->integer('points');
+            $table->integer('points')->nullable();
             $table->timestamps();
         });
     }

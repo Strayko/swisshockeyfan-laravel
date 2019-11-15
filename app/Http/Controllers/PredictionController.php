@@ -15,18 +15,28 @@ class PredictionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
+        // $id = 12;
         $userId = Auth::id();
         $predictions = Prediction::where('user_id', $userId)->get();
         $matches = Match::all();
+        $matchesByMonth = Match::whereMonth('date_play', $id)->get();
         $matchesArray = array();
         $curentDateTime = Carbon::now();
 
-        foreach($matches as $match) {
-           if(!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
-                $matchesArray[] = $match;
-           }
+        if ($id == null) {
+            foreach($matches as $match) {
+               if(!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
+                    $matchesArray[] = $match;
+               }
+            }
+        } else {
+            foreach($matchesByMonth as $match) {
+                if(!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
+                    $matchesArray[] = $match;
+                }
+            }
         }
 
         return view('prediction.index', compact('matchesArray'));
@@ -55,7 +65,7 @@ class PredictionController extends Controller
         $user = Auth::user();
         $currentDateTime = Carbon::now();
         $match = Match::where('id', $input['match_id'])->first();
-        if (!$currentDateTime >= $match->date_play) {
+        if ($match->date_play >= $currentDateTime) {
             $user->prediction()->create($input);
         } else {
             return redirect()->back()->with('error', 'Match ' . $match->home_team . ' - ' . $match->away_team . ' has already started');
