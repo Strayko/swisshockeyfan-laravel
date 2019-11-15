@@ -58,7 +58,7 @@ class PredictionController extends Controller
         if (!$currentDateTime >= $match->date_play) {
             $user->prediction()->create($input);
         } else {
-            return redirect()->back()->with('error', 'Isteklo vrijeme za opkladu za Mac ' . $match->id);
+            return redirect()->back()->with('error', 'Match ' . $match->home_team . ' - ' . $match->away_team . ' has already started');
         }
         return redirect()->back();
     }

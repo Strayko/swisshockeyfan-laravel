@@ -154,6 +154,7 @@ class UserController extends Controller
             }
             $userPoints[] = array(
                 'points' => $points,
+                'id' => $tipGroup->id,
                 'name' => $tipGroup->name
             );
         }
@@ -173,7 +174,10 @@ class UserController extends Controller
     {
         $count = 0;
         $users = User::where('tip_group_id', $id)->get();
+
+        $tipGroup = TipGroup::where('id', $id)->first();
+
         $users = $users->sortByDesc('points');
-        return view('user.tip-group-users', compact('users', 'count'));
+        return view('user.tip-group-users', compact('users', 'count', 'tipGroup'));
     }
 }
