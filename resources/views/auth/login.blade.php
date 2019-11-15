@@ -24,7 +24,7 @@
                 <div class="frm-group">
                   <input type="password" placeholder="passwort" name="password" required autocomplete="current-password">
 
-                  
+
                   @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -37,7 +37,7 @@
                   <button type="submit" class="submit-btn">Sign In</button>
                 </div>
               </form>
-              <p><a href="{{ route('register') }}">Haven't your any account in here?</a><a href="#0">Forget password?</a></p>
+              <p><a href="{{ route('register') }}">Haven't your any account in here?</a><a href="{{ route('password.request') }}">Forget password?</a></p>
             </div>
           </div>
         </div>
