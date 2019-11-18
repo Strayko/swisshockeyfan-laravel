@@ -34,9 +34,11 @@ Route::patch('/tip-group/{id}', 'TipGroupController@update')->name('tip-group.up
 
 Route::resource('/prediction', 'PredictionController');
 
-
+Route::get('/contact', 'ContactController@index')->name('contact.index');
+Route::post('/contact', 'ContactController@sendEmail')->name('contact.sendEmail');
 
 Route::group(['middleware' => 'admin'], function() {
     Route::resource('/adding-match', 'AddingMatchController');
     Route::resource('/match', 'MatchController');
 });
+
