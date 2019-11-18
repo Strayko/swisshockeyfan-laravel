@@ -72,7 +72,7 @@
                         <li><a href="#">Tippgruppen</a></li>
                     </ul>
                 </li>
-                <li><a href="#">Kontakt</a></li>
+                <li><a href="{{ route('contact.index') }}">Kontakt</a></li>
                 @guest
                 <li class="login-register">
                     <a href="{{ route('login') }}">{{ __('Login') }}</a>
