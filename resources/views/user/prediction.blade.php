@@ -35,6 +35,13 @@
                                         <td colspan="2" rowspan="2">{{ $prediction->points }}</td>
                                     </tr>
                                     <tr>
+                                        <td>1</td>
+                                        <td>test1</td>
+                                        <td>test2</td>
+                                        <td>sssss</td>
+                                        <td colspan="2" rowspan="2">poeni</td>
+                                    </tr>
+                                    <tr>
                                         <td>My Tip:</td>
                                         <td>{{ $prediction->home_score }}</td>
                                         <td>My Tip:</td>

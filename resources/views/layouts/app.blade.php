@@ -89,6 +89,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li><a href="/user/{{ Auth::user()->id }}/edit">Profile</a></li>
+                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">My Predictions</a></li>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
