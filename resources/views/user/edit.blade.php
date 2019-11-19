@@ -1,6 +1,23 @@
 @extends('layouts.app')
 
 @section('content')
+
+<!-- banner-section start -->
+<section class="breadcum-section">
+    <div class="breadcum-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcum-content text-center">
+                        <h3 class="title">{{ __('Profile') }}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- banner-section end -->
+
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">

@@ -89,7 +89,7 @@
                                                    <div class="team-name-part">
                                                    {{ ++$count }}
                                                    </div> </td>
-                                                <td><div class="team-name-part">
+                                                <td><div class="team-name-part tip-group-link">
                                                    <a href="/user/tip-group/{{ $points['id'] }}"> {{ $points['name'] }}</a>
                                                 </div> </td>
                                                 <td>

@@ -143,13 +143,13 @@ class UserController extends Controller
     {
         $userId = User::findOrFail($id);
         $predictions = Prediction::where('user_id', $userId->id)->get();
-
+        
         return view('user.prediction', compact('predictions'));
     }
 
     public function rangList()
     {
-        $users = User::orderBy('points', 'DESC')->paginate(1);
+        $users = User::orderBy('points', 'DESC')->get();
         $count = 0;
         return view('user.rang-list', compact('users', 'count'));
     }

@@ -2148,6 +2148,19 @@ button.single-item.submit-button {
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
 }
+
+.tip-group-link a:hover {
+  text-decoration:underline!important;
+  color:black;
+}
+
+.submit-tippgroup {
+  color:#fff;
+  border:none;
+  width:300px;
+  max-width:initial;
+  flex:.5;
+}
 /* user-profile-section css end */
 
 /* footer-section css start */
