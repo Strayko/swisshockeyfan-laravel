@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="online-play-tab-part">
-                    <ul class="nav justify-content-around" id="myTab" role="tablist">
+                    {{-- <ul class="nav justify-content-around" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="nav-link active" id="all-tab" data-toggle="tab" href="#all" role="tab"
                                 aria-controls="all" aria-selected="true">
@@ -69,7 +69,7 @@
                                 <span>Marz</span>
                             </a>
                         </li>
-                    </ul>
+                    </ul> --}}
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
                             <div class="play-table-part">
@@ -85,6 +85,7 @@
                                         </thead>
                                         <tbody>
                                             @foreach($users as $user)
+                                            @if($user->points != null)
                                             <tr>
                                                 <td>
                                                    <div class="team-name-part">
@@ -103,6 +104,7 @@
                                                 </div>
                                                     </td>
                                             </tr>
+                                            @endif
                                             @endforeach
                                         </tbody>
                                     </table>
