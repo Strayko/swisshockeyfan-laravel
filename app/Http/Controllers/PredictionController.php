@@ -15,31 +15,56 @@ class PredictionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($id = null)
+    public function index()
     {
         // $id = 12;
         $userId = Auth::id();
         $predictions = Prediction::where('user_id', $userId)->get();
         $matches = Match::all();
-        $matchesByMonth = Match::whereMonth('date_play', $id)->get();
+//        $matchesByMonth = Match::whereMonth('date_play', $id)->get();
         $matchesArray = array();
         $curentDateTime = Carbon::now();
 
-        if ($id == null) {
-            foreach($matches as $match) {
-               if(!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
-                    $matchesArray[] = $match;
-               }
-            }
-        } else {
-            foreach($matchesByMonth as $match) {
-                if(!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
-                    $matchesArray[] = $match;
-                }
+
+        foreach($matches as $match) {
+            if (!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
+                $matchesArray[] = $match;
             }
         }
 
+
         return view('prediction.index', compact('matchesArray'));
+    }
+
+    function fetch_data(Request $request)
+    {
+
+        if($request->ajax())
+        {
+
+            $sort_by = $request->get('sortby');
+
+            $userId = Auth::id();
+            $predictions = Prediction::where('user_id', $userId)->get();
+            if($sort_by == '0'){
+                $matches = Match::all();
+            } else {
+                $matches = Match::whereMonth('date_play', $sort_by)->get();
+            }
+
+//        $matchesByMonth = Match::whereMonth('date_play', $id)->get();
+            $matchesArray = array();
+            $curentDateTime = Carbon::now();
+
+
+            foreach($matches as $match) {
+                if (!$predictions->contains('match_id', $match->id) && $match->date_play >= $curentDateTime) {
+                    $matchesArray[] = $match;
+                }
+            }
+
+            return view('ajax.by-month', compact('matchesArray'))->render();
+        }
     }
 
     /**
