@@ -116,7 +116,7 @@
                                                     {!! Form::close() !!}
                                                 </td>
                                                 <td>
-                                                    <span class="bet-count-num">{{$match->date_play}}</span>
+                                                    <span class="bet-count-num match-date">{{$match->date_play}}</span>
                                                 </td>
                                                 </tr>
                                             @endforeach
@@ -191,3 +191,18 @@
     </section>
     <!-- play-section end -->
 @endsection
+
+
+@push('scripts')
+    <script>
+        let dates = document.querySelectorAll('.match-date')
+        moment.locale('de');
+
+        dates.forEach(el => {
+            let dateTime = new Date(el.innerText);
+
+            el.innerText = moment(dateTime).format('DD MMMM YYYY hh:mm');
+            return el;
+        })
+    </script>
+@endpush
