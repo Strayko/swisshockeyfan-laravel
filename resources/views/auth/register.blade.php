@@ -1,169 +1,144 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Register') }}</div>
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="firstName" class="col-md-4 col-form-label text-md-right">{{ __('First Name *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="firstName" type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
-
-                                @error('first_name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="lastName" class="col-md-4 col-form-label text-md-right">{{ __('Last Name *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="lastName" type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" value="{{ old('last_name') }}" required autocomplete="last_name" autofocus>
-
-                                @error('last_name')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('Username *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="username" type="text" class="form-control @error('username') is-invalid @enderror" name="username" value="{{ old('username') }}" required autocomplete="username" autofocus>
-
-                                @error('username')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="password">
-
-                                @error('password')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="password">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="mobilePhone" class="col-md-4 col-form-label text-md-right">{{ __('Mobile Phone *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="mobilePhone" type="text" class="form-control @error('mobile_phone') is-invalid @enderror" name="mobile_phone" value="{{ old('mobile_phone') }}" required autocomplete="mobile_phone" autofocus>
-
-                                @error('mobile_phone')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="telephone" class="col-md-4 col-form-label text-md-right">{{ __('Telephone') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="telephone" type="text" class="form-control" name="telephone" value="{{ old('telephone') }}">
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="street" class="col-md-4 col-form-label text-md-right">{{ __('Street *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="street" type="text" class="form-control @error('street') is-invalid @enderror" name="street" value="{{ old('street') }}" required autocomplete="street" autofocus>
-
-                                @error('street')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="postCode" class="col-md-4 col-form-label text-md-right">{{ __('Post Code *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="postCode" type="text" class="form-control @error('post_code') is-invalid @enderror" name="post_code" value="{{ old('post_code') }}" required autocomplete="post_code" autofocus>
-
-                                @error('post_code')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="place" class="col-md-4 col-form-label text-md-right">{{ __('Place *') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="place" type="text" class="form-control @error('place') is-invalid @enderror" name="place" value="{{ old('place') }}" required autocomplete="place" autofocus>
-
-                                @error('place')
-                                <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+<!-- banner-section start -->
+<section class="breadcum-section">
+    <div class="breadcum-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="breadcum-content text-center">
+                        <h3 class="title">{{ __('Registrierung') }}</h3>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
+<!-- banner-section end -->
+
+<section class="registration-section section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="registration-block text-center">
+                    <div class="registration-block-inner">
+                        <h3 class="title">{{ __('Mitmachen!') }}</h3>
+                        <form class="cmn-form registration-form" method="POST" action="{{ route('register') }}">
+                            @csrf
+                            <div class="frm-group">
+                                <input type="text" id="firstName" placeholder="Vorname *" name="first_name"
+                                    value="{{ old('first_name') }}" required autocomplete="first_name" autofocus>
+                                @error('first_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+
+                            <div class="frm-group">
+                                <input type="text" id="lastName" name="last_name" value="{{ old('last_name') }}"
+                                    required autocomplete="last_name" autofocus placeholder="{{ __('Last Name *') }}">
+                                @error('last_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input type="text" id="username" placeholder="Nachname *" name="username"
+                                    value="{{ old('username') }}" required autocomplete="username" autofocus>
+                                @error('username')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input type="email" id="email" name="email" value="{{ old('email') }}"
+                                    placeholder="{{ __('E-Mail') }}" required autocomplete="email">
+                                @error('email')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input type="password" name="password" id="password" required autocomplete="password"
+                                    placeholder="Passwort">
+
+                                @error('password')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input type="password" id="password-confirm" placeholder="Passwort bestätigen"
+                                    name="password_confirmation" required autocomplete="password">
+                            </div>
+                            <div class="frm-group">
+                                <input id="mobilePhone" type="text"
+                                    class="@error('mobile_phone') is-invalid @enderror" name="mobile_phone"
+                                    value="{{ old('mobile_phone') }}" required autocomplete="mobile_phone" autofocus placeholder="Handy Nr. *">
+                                @error('last_name')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input id="telephone" type="text" name="telephone" value="{{ old('telephone') }}" placeholder="Telefon Nr.">
+                                @error('telephone')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input id="street" type="text" class="@error('street') is-invalid @enderror"
+                                    name="street" value="{{ old('street') }}" required autocomplete="street" autofocus
+                                    placeholder="Strasse" />
+                                @error('street')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input id="post-code" type="text" name="post_code"
+                                    value="{{ old('post_code') }}" required autocomplete="post_code" autofocus placeholder="Postleitzahl"/>
+                                @error('post_code')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <input id="place" type="text" type="text" class="@error('place') is-invalid @enderror"
+                                    name="place" value="{{ old('place') }}" required autocomplete="place" autofocus placeholder="Ort">
+
+                                @error('place')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                @enderror
+                            </div>
+                            <div class="frm-group">
+                                <span>* Bei gleicher Ranglisten-Platzierung, entscheidet dieser Tipp (inklusive Verlängerung und Penaltyschiessen)!
+Bitte überprüfen Sie Ihren Spamordner, falls Sie keine Registrierungsmail von uns erhalten haben nach der Registrierung!</span>
+                            </div>
+                            <div class="frm-group">
+                                <button type="submit" class="submit-btn">{{ __('Registrierung') }}</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 @endsection
