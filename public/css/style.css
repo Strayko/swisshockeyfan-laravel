@@ -2160,7 +2160,13 @@ button.single-item.submit-button {
   width:300px;
   max-width:initial;
   flex:.5;
-  
+}
+
+.submit-tippgroup:disabled {
+  pointer-events:none;
+  cursor: not-allowed;
+
+  opacity:.5;
 }
 /* user-profile-section css end */
 
