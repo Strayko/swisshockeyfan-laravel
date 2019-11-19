@@ -56,12 +56,12 @@
                 <li class="menu_has_children"><a href="#">Rangliste</a>
                     <ul class="sub-menu">
                         <li><a href="{{ route('user.rang-list') }}">Rangliste Einzeln</a></li>
-                        <li><a href="{{ route('user.tip-group-list') }}">Rangliste Tippgroupen</a></li>
+                        <li><a href="{{ route('user.tip-group-list') }}">Rangliste Tippgruppen</a></li>
                     </ul>
                 </li>
                 @guest
                 @else
-                <li><a href="{{ route('tip-group.index') }}">Tippgroupe</a></li>
+                <li><a href="{{ route('tip-group.index') }}">Tippgruppe</a></li>
                 @endguest
                 <li><a href="#">Spielregeln</a></li>
                 <li class="menu_has_children"><a href="#">Preise</a>
@@ -89,6 +89,7 @@
                     </a>
                     <ul class="sub-menu">
                         <li><a href="/user/{{ Auth::user()->id }}/edit">Profile</a></li>
+                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">My Predictions</a></li>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -104,6 +105,7 @@
     </div><!-- header-bottom end -->
   </header>
   <!--  header-section end  -->
+  <script src="{{ asset('js/jquery-3.3.1.min.js') }}"></script>
   @yield('content')
 
       <!-- footer-section start -->
@@ -174,6 +176,13 @@
   <script src="{{ asset('js/lightcase.js') }}"></script>
   <!-- wow js file -->
   <script src="{{ asset('js/wow.min.js') }}"></script>
+
+  <script src="{{ asset('js/moment-with-locales.min.js') }}"></script>
+
+  <script>
+      moment.locale('de');
+  </script>
+  @stack('scripts')
   <!-- tweenmax js file -->
   <!-- <script src="{{ asset('js/TweenMax.min.js') }}"></script> -->
   <!-- main js file -->
