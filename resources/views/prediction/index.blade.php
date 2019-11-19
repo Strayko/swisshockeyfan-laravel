@@ -1,5 +1,5 @@
 @extends('layouts.app')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 @section('content')
      <!-- banner-section start -->
       <section class="breadcum-section">
@@ -72,6 +72,24 @@
                         </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="all" role="tabpanel" aria-labelledby="all-tab">
+
+
+                                <a class="month" data-column_name="0" href="javascript:void(0);">All</a>
+                                <a class="month" data-column_name="1" href="javascript:void(0);">January</a>
+                                <a class="month" data-column_name="2" href="javascript:void(0);">February</a>
+                                <a class="month" data-column_name="3" href="javascript:void(0);">March</a>
+                                <a class="month" data-column_name="4" href="javascript:void(0);">April</a>
+                                <a class="month" data-column_name="5" href="javascript:void(0);">May</a>
+                                <a class="month" data-column_name="6" href="javascript:void(0);">June</a>
+                                <a class="month" data-column_name="7" href="javascript:void(0);">July</a>
+                                <a class="month" data-column_name="8" href="javascript:void(0);">August</a>
+                                <a class="month" data-column_name="9" href="javascript:void(0);">September</a>
+                                <a class="month" data-column_name="10" href="javascript:void(0);">October</a>
+                                <a class="month" data-column_name="11" href="javascript:void(0);">November</a>
+                                <a class="month" data-column_name="12" href="javascript:void(0);">December</a>
+
+
+
                         <div class="play-table-part">
                                     <div class="play-table">
                                     <table>
@@ -84,47 +102,15 @@
                                         </thead>
                                         <tbody>
                                         <h3 style="color:#e52520; font-weight:700;margin-bottom:10px;">{{ session('error') ? session('error') : '' }}<h3>
-                                        @if(count($matchesArray) > 0)
-                                            @foreach($matchesArray as $match)
-                                                <tr>
-                                                <td>
-                                                    <div class="team-name-part">
-                                                        <i class="fas fa-hockey-puck"></i>
-                                                    </div>
-                                                </td>
-                                                <td>
-                                                    {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}
-                                                        <form class="choice-team-part cmn-form">
-                                                            <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
-                                                            <input type="hidden" name="finished" id="finished" value="1">
-                                                            <div class="team frm-group">
-                                                                <label for="home_team" class="name">{{$match->home_team}}</label>
-                                                                {!! Form::text('home_score', null, ['id'=>'home_score']) !!}
-                                                            </div>
-                                                            <div class="team frm-group">
-                                                                <label for="home_team" class="name">{{$match->away_team}}</label>
-                                                                {!! Form::text('away_score', null, ['id'=>'away_score']) !!}
-                                                            </div>
-                                                            <div class="team frm-group">
-                                                                @if(Auth::check())
-                                                                    <button type="submit" class="single-item submit-button">Submit</button>
-                                                                @else
-                                                                    <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Login') }}</a>
-                                                                @endif
-                                                            </div>
-                                                        </form>
-                                                    {!! Form::close() !!}
-                                                </td>
-                                                <td>
-                                                    <span class="bet-count-num">{{$match->date_play}}</span>
-                                                </td>
-                                                </tr>
-                                            @endforeach
-                                        @else
-                                            <h1>No records</h1>
-                                        @endif
+{{--                                        @if(count($matchesArray) > 0)--}}
+
+                                            @include('ajax.by-month')
+{{--                                        @else--}}
+{{--                                            <h1>No records</h1>--}}
+{{--                                        @endif--}}
                                         </tbody>
                                     </table>
+
                                     </div>
                                 </div>
                         </div>
@@ -141,39 +127,37 @@
                                             </tr>
                                         </thead>
                                         <tbody>
-                                        @if(count($matchesArray) > 0)
-                                        @foreach($matchesArray as $match)
-                                            <tr>
-                                            <td>
-                                                <div class="team-name-part">
-                                                    <i class="fas fa-hockey-puck"></i>
-                                                </div>
-                                            </td>
-                                            <td>
-                                                {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}
-                                                    <form class="choice-team-part cmn-form">
-                                                        <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
-                                                        <input type="hidden" name="finished" id="finished" value="1">
-                                                        <div class="team frm-group">
-                                                            <label for="home_team" class="name">{{$match->home_team}}</label>
-                                                            {!! Form::text('home_score', null, ['id'=>'home_score']) !!}
-                                                        </div>
-                                                        <div class="team frm-group">
-                                                            <label for="home_team" class="name">{{$match->away_team}}</label>
-                                                            {!! Form::text('home_score', null, ['id'=>'home_score']) !!}
-                                                        </div>
-                                                        <button type="submit">Submit</button>
-                                                    </form>
-                                                {!! Form::close() !!}
-                                            </td>
-                                            <td>
-                                                <span class="bet-count-num">{{ $match->play_date }}</span>
-                                            </td>
-                                            </tr>
-                                        @endforeach
-                                        @else
-                                        <h1>No records</h1>
-                                        @endif
+{{--                                        @if(count($matchesArray) > 0)--}}
+{{--                                        @foreach($matchesArray as $match)--}}
+{{--                                            <tr>--}}
+{{--                                            <td>--}}
+{{--                                                <div class="team-name-part">--}}
+{{--                                                    <i class="fas fa-hockey-puck"></i>--}}
+{{--                                                </div>--}}
+{{--                                            </td>--}}
+{{--                                                {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}--}}
+{{--                                                <form class="choice-team-part cmn-form">--}}
+{{--                                                    <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">--}}
+{{--                                                    <input type="hidden" name="finished" id="finished" value="1">--}}
+{{--                                                    <div class="team frm-group">--}}
+{{--                                                        <label for="home_team" class="name">{{$match->home_team}}</label>--}}
+{{--                                                        {!! Form::text('home_score', null, ['id'=>'home_score']) !!}--}}
+{{--                                                    </div>--}}
+{{--                                                    <div class="team frm-group">--}}
+{{--                                                        <label for="home_team" class="name">{{$match->away_team}}</label>--}}
+{{--                                                        {!! Form::text('home_score', null, ['id'=>'home_score']) !!}--}}
+{{--                                                    </div>--}}
+{{--                                                    <button type="submit">Submit</button>--}}
+{{--                                                </form>--}}
+{{--                                                {!! Form::close() !!}--}}
+{{--                                            <td>--}}
+{{--                                                <span class="bet-count-num">{{ $match->play_date }}</span>--}}
+{{--                                            </td>--}}
+{{--                                            </tr>--}}
+{{--                                        @endforeach--}}
+{{--                                        @else--}}
+{{--                                        <h1>No records</h1>--}}
+{{--                                        @endif--}}
                                         </tbody>
                                     </table>
                                     </div>
@@ -191,3 +175,46 @@
     </section>
     <!-- play-section end -->
 @endsection
+<script>
+    $(document).ready(function(){
+
+
+
+        function clear_icon()
+        {
+            $('#id_icon').html('');
+            $('#post_title_icon').html('');
+        }
+
+        // var parametarSet;
+        // var parametar = window.location.href;
+        // var parametarExport = parametar.match(/en/);
+        // if (parametarExport == 'en') {
+        //     parametarSet = 'en';
+        // } else {
+        //     parametarSet = 'de'
+        // }
+
+        function fetch_data(column_name)
+        {
+            $.ajax({
+                url:"/prediction/spy5k2YgeWYBY46X?sortby="+column_name,
+                success:function(data)
+                {
+                    $('tbody').html('');
+                    $('tbody').html(data);
+                }
+            })
+        }
+
+
+        $(document).on('click', '.month', function(){
+            var column_name = $(this).data('column_name');
+            fetch_data(column_name);
+        });
+
+
+
+
+    });
+</script>

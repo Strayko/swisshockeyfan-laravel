@@ -31,7 +31,7 @@ Route::get('/user/tip-group/{id}', 'UserController@tipGroupUsers');
 Route::get('/tip-group', 'TipGroupController@index')->name('tip-group.index');
 Route::patch('/tip-group/{id}', 'TipGroupController@update')->name('tip-group.update');
 
-
+Route::get('/prediction/spy5k2YgeWYBY46X', 'PredictionController@fetch_data');
 Route::resource('/prediction', 'PredictionController');
 
 Route::get('/contact', 'ContactController@index')->name('contact.index');
