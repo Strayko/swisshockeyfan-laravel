@@ -33,7 +33,7 @@
                     {{ session('error') }}
                 </div>
             @endif
-            </div>
+
 
             <form class="cmn-form registration-form" method="POST" action="{{ route('user.update', ['id' => $user->id]) }}">
                 @csrf
@@ -139,7 +139,8 @@
 
             </form>
 
-            <div 
+        </div>
+            <div>
         </div>
     </div>
 </section>
