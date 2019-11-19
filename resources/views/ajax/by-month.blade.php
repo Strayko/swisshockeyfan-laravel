@@ -30,10 +30,11 @@
                 {!! Form::close() !!}
             </td>
             <td>
-                <span class="bet-count-num">{{$match->date_play}}</span>
+                <span class="bet-count-num match-date">{{$match->date_play}}</span>
             </td>
         </tr>
     @endforeach
 @else
     <h1>No records</h1>
 @endif
+
