@@ -102,14 +102,14 @@
                                         </thead>
                                         <tbody>
                                         <h3 style="color:#e52520; font-weight:700;margin-bottom:10px;">{{ session('error') ? session('error') : '' }}<h3>
-<<<<<<< HEAD
+
 {{--                                        @if(count($matchesArray) > 0)--}}
 
                                             @include('ajax.by-month')
 {{--                                        @else--}}
 {{--                                            <h1>No records</h1>--}}
 {{--                                        @endif--}}
-=======
+
                                         @if(count($matchesArray) > 0)
                                             @foreach($matchesArray as $match)
                                                 <tr>
@@ -149,7 +149,7 @@
                                         @else
                                             <h1>No records</h1>
                                         @endif
->>>>>>> bce7feec197eaee139a381c0d8a4f5172450057c
+
                                         </tbody>
                                     </table>
 
@@ -217,7 +217,7 @@
     </section>
     <!-- play-section end -->
 @endsection
-<<<<<<< HEAD
+
 <script>
     $(document).ready(function(){
 
@@ -229,14 +229,6 @@
             $('#post_title_icon').html('');
         }
 
-        // var parametarSet;
-        // var parametar = window.location.href;
-        // var parametarExport = parametar.match(/en/);
-        // if (parametarExport == 'en') {
-        //     parametarSet = 'en';
-        // } else {
-        //     parametarSet = 'de'
-        // }
 
         function fetch_data(column_name)
         {
@@ -261,7 +253,7 @@
 
     });
 </script>
-=======
+
 
 
 @push('scripts')
@@ -277,4 +269,4 @@
         })
     </script>
 @endpush
->>>>>>> bce7feec197eaee139a381c0d8a4f5172450057c
+
