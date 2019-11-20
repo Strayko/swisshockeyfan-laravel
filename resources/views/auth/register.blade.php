@@ -82,7 +82,7 @@
                                 <input id="mobilePhone" type="text"
                                     class="@error('mobile_phone') is-invalid @enderror" name="mobile_phone"
                                     value="{{ old('mobile_phone') }}" required autocomplete="mobile_phone" autofocus placeholder="Handy Nr. *">
-                                @error('last_name')
+                                @error('mobile_phone')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

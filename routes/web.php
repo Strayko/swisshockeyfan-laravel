@@ -37,6 +37,9 @@ Route::resource('/prediction', 'PredictionController');
 Route::get('/contact', 'ContactController@index')->name('contact.index');
 Route::post('/contact', 'ContactController@sendEmail')->name('contact.sendEmail');
 
+//Route::get('/users/import-csv', 'ImportCSVController@index')->name('users.import-csv');
+//Route::post('/users/import-csv', 'ImportCSVController@store')->name('users.import-csv-store');
+
 Route::group(['middleware' => 'admin'], function() {
     Route::resource('/adding-match', 'AddingMatchController');
     Route::resource('/match', 'MatchController');
