@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Imports\MatchesImport;
 use Illuminate\Http\Request;
 use App\Imports\UserImport;
 use Maatwebsite\Excel\Facades\Excel;
@@ -37,6 +38,13 @@ class ImportCSVController extends Controller
     public function store(Request $request)
     {
         Excel::import(new UserImport, $request->file('import_csv'));
+
+        return redirect()->back();
+    }
+
+    public function storeMatch(Request $request)
+    {
+        Excel::import(new MatchesImport, $request->file('import_csv'));
 
         return redirect()->back();
     }
