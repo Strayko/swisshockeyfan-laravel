@@ -21,7 +21,8 @@ class MatchesImport implements ToModel, WithHeadingRow
             'home_team'     => $row['home_team'],
             'away_team'     => $row['away_team'],
             'place'         => $row['place'],
-            'date_play'     => $row['date_play']
+            'date_play'     => $row['date_play'],
+            'match_id'     => $row['match_id']
         ]);
     }
 }
