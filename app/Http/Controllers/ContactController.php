@@ -18,7 +18,7 @@ class ContactController extends Controller
         $data = $request->all();
 
         Mail::send('email', $data, function($message) use ($data) {
-            $message->to($data['email'])->subject($data['subject']);
+            $message->to('samer.sacic@die-werber.ch')->subject($data['subject']);
         });
 
         Session::flash('form_submitted', 'Form is sent!');

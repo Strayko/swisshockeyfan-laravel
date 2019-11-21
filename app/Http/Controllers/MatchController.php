@@ -23,7 +23,7 @@ class MatchController extends Controller
         $matches = Match::all();
         return view('match.index', compact('matches'));
     }
-    
+
     /**
      * Show the form for creating a new resource.
      *

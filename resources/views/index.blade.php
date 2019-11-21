@@ -7,7 +7,7 @@
     <div class="banner-content-area">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-8">
+          <div class="col-lg-10">
             <div class="banner-content text-center">
               <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swisshockeyfan</h1>
               <div class="scroll-down" >
