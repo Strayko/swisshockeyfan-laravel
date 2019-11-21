@@ -101,7 +101,7 @@
                                         </thead>
                                         <tbody>
                                             <h3 style="color:#e52520; font-weight:700;margin-bottom:10px;">
-                                                {{ session('error') ? session('error') : '' }}<h3>
+                                                {{ session('error') ? session('error') : '' }}</h3>
 
                                                     {{--                                        @if(count($matchesArray) > 0)--}}
 
