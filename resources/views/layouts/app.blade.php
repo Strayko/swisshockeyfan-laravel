@@ -33,6 +33,10 @@
     <!-- responsive css file -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+
 </head>
 <body>
     <!-- preloader start -->
@@ -63,13 +67,12 @@
                 @else
                 <li><a href="{{ route('tip-group.index') }}">Tippgruppe</a></li>
                 @endguest
-                <li><a href="#">Spielregeln</a></li>
+                {{-- <li><a href="#">Spielregeln</a></li> --}}
+                <li><a href="{{ url('/sponsors') }}">Sponsoren</a> </li>
                 <li class="menu_has_children"><a href="#">Preise</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Einzelspieler Gesamt</a></li>
-                        <li><a href="#">Monatspreise</a></li>
-                        <li><a href="#">Special Weekend</a></li>
-                        <li><a href="#">Tippgruppen</a></li>
+                        <li><a href="{{ url('/preise') }}">Einzelspieler Gesamt</a></li>
+                        <li><a href="{{ url('/monatspreise') }}">Monatspreise</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('contact.index') }}">Kontakt</a></li>
@@ -88,8 +91,8 @@
                     {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="/user/{{ Auth::user()->id }}/edit">Profile</a></li>
-                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">My Predictions</a></li>
+                        <li><a href="/user/{{ Auth::user()->id }}/edit">Mein Profil</a></li>
+                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">Unsere Tippen</a></li>
                         <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
@@ -182,6 +185,8 @@
   <script>
       moment.locale('de');
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
   @stack('scripts')
   <!-- tweenmax js file -->
   <!-- <script src="{{ asset('js/TweenMax.min.js') }}"></script> -->
