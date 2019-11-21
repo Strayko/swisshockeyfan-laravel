@@ -12,18 +12,33 @@
 */
 
 use App\Match;
+use App\Prediction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function (Request $request) {
+
+
+    $matches = Match::all();
+
+    $userId = Auth::id();
+    $predictions = Prediction::where('user_id', $userId)->get();
+    $matchesArray = array();
+
     $currentDate = Carbon::now();
     $currentMonday = Carbon::now();
     $currentMonday->modify('next monday');
 
     $matches = Match::whereBetween('date_play', [$currentDate, $currentMonday])->get();
 
-    return view('index', compact('matches'));
+    foreach($matches as $match) {
+        if (!$predictions->contains('match_id', $match->id) && $match->date_play >= $currentDate) {
+            $matchesArray[] = $match;
+        }
+    }
+
+    return view('index', compact('matchesArray'));
 });
 
 Auth::routes();

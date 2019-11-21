@@ -92,6 +92,7 @@ class PredictionController extends Controller
     {
 
         $input = $request->all();
+
         $user = Auth::user();
         $currentDateTime = Carbon::now();
         $match = Match::where('id', $input['match_id'])->first();
