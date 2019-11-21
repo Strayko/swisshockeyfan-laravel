@@ -46,8 +46,13 @@ class PredictionController extends Controller
 
             $userId = Auth::id();
             $predictions = Prediction::where('user_id', $userId)->get();
+
+            $currentDate = Carbon::now();
+
             if($sort_by == '0'){
                 $matches = Match::all();
+            } elseif($sort_by == '13') {
+                $matches = Match::whereDate('date_play', $currentDate)->get();
             } else {
                 $matches = Match::whereMonth('date_play', $sort_by)->get();
             }

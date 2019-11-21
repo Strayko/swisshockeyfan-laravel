@@ -790,6 +790,14 @@ button.single-item.submit-button {
   padding: 104px 50px 120px 50px;
   align-items: center;
 }
+.sponsors-content {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width:100%;
+    background-color: var(--second-color);
+    padding: 104px 50px 120px 50px;
+    align-items: center;
+}
 .app-content .title {
   color: #ffffff;
 }
@@ -824,6 +832,55 @@ button.single-item.submit-button {
 }
 .app-content .btn-area a i {
   margin-right: 10px;
+}
+
+.sponsors-content .content {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.sponsors-content .sponsors-list h2 {
+    text-align: center;
+    color: var(--main-color);
+    margin-top:5rem;
+    margin-bottom:5rem;
+    font-weight:800;
+}
+
+.sponsors-content .row.sponsors {
+    padding-bottom:4rem;
+}
+.sponsors-content .sponsors .align-center {
+    margin:0 auto;
+    text-align: center;
+}
+
+.rank-name {
+    text-align:center;
+    margin:0 auto;
+    font-weight: 800;
+    font-size:2.5rem;
+}
+
+.trophies tr td:first-child {
+    padding-left: 0px;
+}
+
+.trophies .trophy {
+    padding-left:0px;
+}
+
+@media screen and (max-width: 768px) {
+    .sponsors-content img {
+        margin:4rem 0;
+    }
+}
+
+.sponsors-content .break-line {
+    border-bottom:2px solid #fff;
+    width:100%;
+    padding:1.5rem 0;
 }
 /* download-app-section css end */
 
