@@ -15,19 +15,19 @@
                 <div class="frm-group">
                   <input type="email" name="email" id="email" placeholder="e-mail">
 
-                  @error('email')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                  @if($errors->has('email'))
+                    <span class="help-block">
+                        <strong>{{$errors->first('email')}}</strong>
                     </span>
-                    @enderror
+                  @endif
                 </div>
                 <div class="frm-group">
                   <input type="password" placeholder="passwort" name="password" required autocomplete="current-password">
-                  @error('password')
-                    <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
+                  @if($errors->has('password'))
+                    <span class="help-block">
+                        <strong>{{$errors->first('password')}}</strong>
                     </span>
-                 @enderror
+                  @endif
                 </div>
 
                 <input class="form-check-input" type="hidden" name="remember" id="remember" checked {{ old('remember') ? 'checked' : '' }}>
