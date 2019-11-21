@@ -37,7 +37,7 @@ class ImportCSVController extends Controller
      */
     public function store(Request $request)
     {
-        Excel::import(new UserImport, $request->file('import_csv'));
+        Excel::import(new MatchesImport, $request->file('import_csv'));
 
         return redirect()->back();
     }
