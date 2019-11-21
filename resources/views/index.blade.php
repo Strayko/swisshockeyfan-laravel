@@ -100,8 +100,6 @@
                                       <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
                                     @endif
 
-                                    <button type="submit" class="single-item submit-button">Prognosieren</button>
-
                                   </div>
 
                                 {!! Form::close() !!}
