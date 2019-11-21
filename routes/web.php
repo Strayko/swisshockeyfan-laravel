@@ -37,6 +37,10 @@ Route::get('/user/tip-group-list', 'UserController@tipGroupList')->name('user.ti
 Route::get('/user/tip-group-user-list', 'UserController@tipGroupUserList')->name('user.tip-group-user-list');
 Route::get('/user/tip-group/{id}', 'UserController@tipGroupUsers');
 
+Route::view('/sponsors', 'static.sponsors');
+Route::view('/preise', 'static.preise');
+Route::view('/monatspreise', 'static.monatspreise');
+
 Route::get('/tip-group', 'TipGroupController@index')->name('tip-group.index');
 Route::patch('/tip-group/{id}', 'TipGroupController@update')->name('tip-group.update');
 
