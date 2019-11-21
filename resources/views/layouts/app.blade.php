@@ -134,17 +134,16 @@
                         <div class="footer-widget widget-menu">
                             <h3 class="widget-title">Menu</h3>
                             <ul class="menu-links">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Blog Details</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{{ route('prediction.index') }}">Spielplan / Tippabgabe</a></li>
+                                <li><a href="{{ url('/sponsors') }}">Sponsoren</a></li>
+                                <li><a href="{{ url('/monatspreise') }}">Monatspreise</a></li>
+                                <li><a href="{{ route('contact.index') }}">Kontakt</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <div class="footer-widget widget-subscribe">
-                            <h3 class="widget-title">Contact</h3>
+                            <h3 class="widget-title">Kontakt</h3>
                             <div class="widget-subscribe-body">
                                 <ul class="address-list">
                                     <li>Firmen Event GmbH </li>
@@ -153,8 +152,8 @@
                                 </ul>
                                 <form class="subscribe-form">
                                     <input type="email" name="subs-email" id="subs-email" class="subs-email"
-                                        placeholder="Email Address">
-                                    <input type="submit" value="Subscribe" class="sub-btn">
+                                        placeholder="Email Addresse">
+                                    <input type="submit" value="Anmelden" class="sub-btn">
                                 </form>
                             </div>
                         </div>
