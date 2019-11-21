@@ -39,7 +39,7 @@
 
                             <div class="frm-group">
                                 <input type="text" id="lastName" name="last_name" value="{{ old('last_name') }}"
-                                    required autocomplete="last_name" autofocus placeholder="{{ __('Last Name *') }}">
+                                    required autocomplete="last_name" autofocus placeholder="{{ __('Nachname *') }}">
                                 @error('last_name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -47,7 +47,7 @@
                                 @enderror
                             </div>
                             <div class="frm-group">
-                                <input type="text" id="username" placeholder="Nachname *" name="username"
+                                <input type="text" id="username" placeholder="Username *" name="username"
                                     value="{{ old('username') }}" required autocomplete="username" autofocus>
                                 @if($errors->has('username'))
                                     <span class="help-block">
@@ -57,7 +57,7 @@
                             </div>
                             <div class="frm-group">
                                 <input type="email" id="email" name="email" value="{{ old('email') }}"
-                                    placeholder="{{ __('E-Mail') }}" required autocomplete="email">
+                                    placeholder="{{ __('E-Mail *') }}" required autocomplete="email">
                                 @if($errors->has('email'))
                                     <span class="help-block">
                                         <strong>{{$errors->first('email')}}</strong>

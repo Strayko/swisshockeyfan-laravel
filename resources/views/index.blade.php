@@ -149,7 +149,7 @@
           </div>
         </div>
         <div class="thumb">
-          <img src="{{ asset('images/elements/app.png') }}" alt="youtube">
+          <img src="{{ asset('images/hockey.png') }}" alt="youtube">
         </div>
       </div>
     </div>
