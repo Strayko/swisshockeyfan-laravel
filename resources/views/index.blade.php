@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="banner-content text-center">
-              <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swisshockeyfan.ch</h1>
+              <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swiss-hockey-fan.ch</h1>
             </div>
           </div>
         </div>
@@ -25,14 +25,14 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 mb-0 pb-0">
           <div class="section-header text-center">
-            <h2 class="section-title">Wir suchen den Swiss Hockey Fan 2019/2020</h2>
+            <h2 class="section-title no-uppercase">Wir suchen den Swiss Hockey Fan 2019/2020</h2>
             <p>Jetzt mitspielen und Swiss Hockey Fan werden</p>
           </div>
-          <p style="text-align: justify;">In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb wollen wir diesen Fans die Chance geben zu beweisen wieviel sie über ihre Lieblingsmannschaft und ihre Gegner wissen.
+          <p style="text-align: justify;">In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb wollen wir diesen Fans die Chance geben zu beweisen, wieviel sie über ihre Lieblingsmannschaft und ihre Gegner wissen.
             <br> <br>
-            Die Teilnehmer, welche sich online über die Homepage anmelden, haben die Chance bis 5min. vor jedem Spiel ihren Tipp zum Ausgang eines Spiels abzugeben. So können sie pro Spiel bis zu 5 Punkte erhalten.
+            Die Teilnehmer, welche sich online über die Homepage anmelden, haben die Chance bis 5 Min. vor jedem Spiel ihren Tipp zum Ausgang eines Spiels abzugeben. So können sie pro Spiel bis zu 5 Punkte erhalten.
             <br> <br>
-            Getippt werden kann auf die Spiele der Swiss Hockey NLA sowie die Hockey WM Spiele.
+            Getippt werden, kann auf die Spiele der Swiss Hockey NLA sowie die Hockey WM Spiele.
             <br> <br>
             Bei der Anmeldung wählen Sie, ob Sie nur für sich selber oder zusätzlich auch noch für eine Gruppe (z.B. ZSC Fangruppe) spielen wollen. Die besten Tipper werden als Monatssieger sowie Saisonsieger gekürt, ein Einstieg ist jederzeit möglich.
           </p>
@@ -154,7 +154,7 @@
           </div>
         </div>
         <div class="thumb">
-          <img src="{{ asset('images/elements/app.png') }}" alt="youtube">
+          <img src="{{ asset('images/hockey.png') }}" alt="youtube">
         </div>
       </div>
     </div>
