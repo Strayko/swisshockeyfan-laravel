@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Match;
 use App\Prediction;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -17,6 +18,8 @@ class MatchController extends Controller
      */
     public function index()
     {
+        $currentTime = Carbon::now();
+
         $matches = Match::all();
         return view('match.index', compact('matches'));
     }

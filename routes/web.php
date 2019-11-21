@@ -11,10 +11,19 @@
 |
 */
 
+use App\Match;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', function (Request $request) {
+    $currentDate = Carbon::now();
+    $currentMonday = Carbon::now();
+    $currentMonday->modify('next monday');
+
+    $matches = Match::whereBetween('date_play', [$currentDate, $currentMonday])->get();
+
+    return view('index', compact('matches'));
 });
 
 Auth::routes();

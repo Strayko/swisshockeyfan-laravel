@@ -69,33 +69,38 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            <div class="team-name-part">
-                              <i class="fas fa-hockey-puck"></i>
-                            </div>
-                          </td>
-                          <td>
-                            <form class="choice-team-part cmn-form">
-                              <input type="hidden" name="match_id" id="match_id" value="3">
-                              <input type="hidden" name="finished" id="finished" value="1">
-                              <div class="team frm-group">
-                                <label for="home_team" class="name">Barcelona</label>
-                                <input type="number" name="home_team" id="home_team" placeholder="Barcelona">
-                              </div>
-                              <div class="team frm-group">
-                                <label for="home_team" class="name">Real Madrid</label>
-                                <input type="number" name="away_team" id="c_fname" placeholder="Real Madrid">
-                              </div>
-                              <div class="team frm-group">
-                                  <button type="submit" class="single-item submit-button">Submit</button>
-                              </div>
+                        @foreach($matches as $match)
+                          @if(!$match->finished && $match->date_play > \Carbon\Carbon::now())
+                            <tr>
+                              <td>
+                                <div class="team-name-part">
+                                  <i class="fas fa-hockey-puck"></i>
+                                </div>
+                              </td>
+                              <td>
+                                <form class="choice-team-part cmn-form">
+                                  <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
+                                  <input type="hidden" name="finished" id="finished" value="1">
+                                  <div class="team frm-group">
+                                    <label for="home_team" class="name">{{$match->home_team}}</label>
+                                    <input type="number" name="home_team" id="home_team" placeholder="{{$match->home_team}}">
+                                  </div>
+                                  <div class="team frm-group">
+                                    <label for="home_team" class="name">{{$match->away_team}}</label>
+                                    <input type="number" name="away_team" id="c_fname" placeholder="{{$match->away_team}}">
+                                  </div>
+                                  <div class="team frm-group">
+                                    <button type="submit" class="single-item submit-button">Submit</button>
+                                  </div>
 
-                            </form>
-                          </td>
-                          <td>
-                            <span class="bet-count-num">16.11.2019 19:45</span>
-                          </td>
+                                </form>
+                              </td>
+                              <td>
+                                <span class="bet-count-num">{{$match->date_play}}</span>
+                              </td>
+                            </tr>
+                          @endif
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
