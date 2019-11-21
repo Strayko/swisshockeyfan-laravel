@@ -368,7 +368,7 @@ span.is-active:after {
 /* banner-section css start */
 .banner-section {
   position: relative;
-  background-image: url('../images/banner.jpg');
+  background-image: url('../images/frontend.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -387,8 +387,23 @@ span.is-active:after {
   opacity: 1;
   z-index: 6;
 }
+.scroll-down i {
+    color:#fff;
+    cursor:pointer;
+    font-size:2rem;
+    animation-iteration-count: infinite;
+    animation-name: blinking;
+    animation-duration:1.4s;
+    /* animation-play-state: running; */
+    animation-fill-mode: both;
+    animation-direction: alternate;
+}
+@keyframes blinking {
+    0% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
 .banner-content-area {
-  padding: 170px 0 150px 0;
+  padding: 33vh 0 35vh 0;
   position: relative;
   z-index: 9;
 }

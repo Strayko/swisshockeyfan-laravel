@@ -9,7 +9,10 @@
         <div class="row justify-content-center">
           <div class="col-lg-10">
             <div class="banner-content text-center">
-              <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swiss-hockey-fan.ch</h1>
+              <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swisshockeyfan</h1>
+              <div class="scroll-down" >
+                <i class="fa fa-angle-down" id="scroll-down"></i>
+              </div>
             </div>
           </div>
         </div>
@@ -20,7 +23,7 @@
   <!-- banner-section end -->
 
    <!-- feature-section start -->
-   <section class="feature-section section-padding pb-5">
+   <section class="feature-section section-padding pb-5" id="feature-section">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8 mb-0 pb-0">
@@ -63,9 +66,9 @@
                     <table>
                       <thead>
                         <tr>
-                          <th class="team-name">Match</th>
+                          <th class="team-name">Spiel</th>
                           <th class="choice-team">Tipp</th>
-                          <th class="bet-num">Date</th>
+                          <th class="bet-num">Datum</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -90,7 +93,7 @@
                                     <input type="number" name="away_score" id="c_fname" placeholder="{{$match->away_team}}">
                                   </div>
                                   <div class="team frm-group">
-                                    <button type="submit" class="single-item submit-button">Submit</button>
+                                    <button type="submit" class="single-item submit-button">Erstellen</button>
                                   </div>
 
                                 {!! Form::close() !!}
@@ -206,26 +209,10 @@
 @push('scripts')
 <script>
 $(document).ready(function(){
-    $('.customer-logos').slick({
-        slidesToShow: 3,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: false,
-        dots: true,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 4
-            }
-        }, {
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 3
-            }
-        }]
-    });
+    $("#scroll-down").click(function() {
+        console.log($("#feature-section").offset().top)
+        $("html, body").animate({ scrollTop: $("#feature-section").offset().top}, 500);
+    })
 });
 </script>
 @endpush

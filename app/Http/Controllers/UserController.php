@@ -68,9 +68,17 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $user = User::findOrFail($id == Auth::id());
+
+        $authId = Auth::id();
+        $user = User::findOrFail($id);
         $tipGroups = TipGroup::all();
-        return view('user.edit', compact('user', 'tipGroups'));
+        if($authId === (int)$user->id){
+            return view('user.edit', compact('user', 'tipGroups'));
+        } else {
+            return redirect('404');
+        }
+
+
     }
 
     /**
