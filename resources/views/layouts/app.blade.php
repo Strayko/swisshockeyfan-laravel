@@ -4,7 +4,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" type="image/png" href="assets\images\favicon.jpg">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.ico') }}">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ url('/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url('/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url('/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ url('/site.webmanifest') }}">
+    <link rel="mask-icon" href="{{ url('/safari-pinned-tab.svg') }}" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#b91d47">
+    <meta name="theme-color" content="#ffffff">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -32,6 +40,10 @@
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <!-- responsive css file -->
     <link rel="stylesheet" href="{{ asset('css/responsive.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
 
 </head>
 <body>
@@ -63,13 +75,12 @@
                 @else
                 <li><a href="{{ route('tip-group.index') }}">Tippgruppe</a></li>
                 @endguest
-                <li><a href="#">Spielregeln</a></li>
+                {{-- <li><a href="#">Spielregeln</a></li> --}}
+                <li><a href="{{ url('/sponsors') }}">Sponsoren</a> </li>
                 <li class="menu_has_children"><a href="#">Preise</a>
                     <ul class="sub-menu">
-                        <li><a href="#">Einzelspieler Gesamt</a></li>
-                        <li><a href="#">Monatspreise</a></li>
-                        <li><a href="#">Special Weekend</a></li>
-                        <li><a href="#">Tippgruppen</a></li>
+                        <li><a href="{{ url('/preise') }}">Einzelspieler Gesamt</a></li>
+                        <li><a href="{{ url('/monatspreise') }}">Monatspreise</a></li>
                     </ul>
                 </li>
                 <li><a href="{{ route('contact.index') }}">Kontakt</a></li>
@@ -88,9 +99,9 @@
                     {{ Auth::user()->first_name }} {{ Auth::user()->last_name }}
                     </a>
                     <ul class="sub-menu">
-                        <li><a href="/user/{{ Auth::user()->id }}/edit">Profile</a></li>
-                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">My Predictions</a></li>
-                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
+                        <li><a href="/user/{{ Auth::user()->id }}/edit">Mein Profil</a></li>
+                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">Unsere Tipps</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Abmelden') }}</a></li>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
@@ -123,17 +134,16 @@
                         <div class="footer-widget widget-menu">
                             <h3 class="widget-title">Menu</h3>
                             <ul class="menu-links">
-                                <li><a href="#">About Us</a></li>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Blog Details</a></li>
-                                <li><a href="#">Service</a></li>
-                                <li><a href="#">Contact us</a></li>
+                                <li><a href="{{ route('prediction.index') }}">Spielplan / Tippabgabe</a></li>
+                                <li><a href="{{ url('/sponsors') }}">Sponsoren</a></li>
+                                <li><a href="{{ url('/monatspreise') }}">Monatspreise</a></li>
+                                <li><a href="{{ route('contact.index') }}">Kontakt</a></li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-lg-4 col-sm-4">
                         <div class="footer-widget widget-subscribe">
-                            <h3 class="widget-title">Contact</h3>
+                            <h3 class="widget-title">Kontakt</h3>
                             <div class="widget-subscribe-body">
                                 <ul class="address-list">
                                     <li>Firmen Event GmbH </li>
@@ -142,8 +152,8 @@
                                 </ul>
                                 <form class="subscribe-form">
                                     <input type="email" name="subs-email" id="subs-email" class="subs-email"
-                                        placeholder="Email Address">
-                                    <input type="submit" value="Subscribe" class="sub-btn">
+                                        placeholder="Email Addresse">
+                                    <input type="submit" value="Anmelden" class="sub-btn">
                                 </form>
                             </div>
                         </div>
@@ -182,6 +192,8 @@
   <script>
       moment.locale('de');
   </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
   @stack('scripts')
   <!-- tweenmax js file -->
   <!-- <script src="{{ asset('js/TweenMax.min.js') }}"></script> -->

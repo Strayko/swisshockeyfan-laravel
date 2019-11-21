@@ -28,7 +28,7 @@
               <i class="fa fa-home"></i>
             </div>
             <div class="content">
-              <h5 class="title">Address</h5>
+              <h5 class="title">Addresse</h5>
               <p>Firmen Event GmbH
               </p>
               <p>
@@ -66,7 +66,7 @@ Hinterrietstrasse 1,
                 </div>
                 <div class="col-md-6">
                   <div class="frm-group">
-                    {!! Form::text('subject', null, ['id'=>'subject', 'class' => 'form-control', 'placeholder' => 'Subject']) !!}
+                    {!! Form::text('subject', null, ['id'=>'subject', 'class' => 'form-control', 'placeholder' => 'Betreff']) !!}
                   </div>
                 </div>
                 <div class="col-md-12">
@@ -76,7 +76,7 @@ Hinterrietstrasse 1,
                 </div>
                 <div class="col-md-12">
                   <div class="frm-group text-center">
-                    <button type="submit" class="submit-btn">Submit</button>
+                    <button type="submit" class="submit-btn">Senden</button>
                   </div>
                 </div>
               </div>

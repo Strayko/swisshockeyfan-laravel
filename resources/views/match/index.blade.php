@@ -8,12 +8,13 @@
                     <div class="card-header">{{ __('Add Match Result') }}</div>
                     <div class="card-body">
                         @foreach($matches as $match)
-                            @if(!$match->finished)
+                            @if(!$match->finished && $match->date_play > \Carbon\Carbon::now() )
                                 <div class="row mb-5">
                                     <div>{{ $match->date_play }}</div>
                                     <div class="col-md-12">
                                         {!! Form::open(['method'=>'PATCH', 'action'=>['MatchController@update', $match->id]]) !!}
                                         <input type="hidden" name="finished" id="finished" value="1">
+                                        {{$match->date_play}}
                                         <div class="form-group">
                                             <label for="home_team">{{$match->home_team}}</label><br>
                                             {!! Form::text('home_score', null, ['id'=>'home_score', 'class' => 'form-control']) !!}

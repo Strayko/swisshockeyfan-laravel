@@ -11,10 +11,34 @@
 |
 */
 
+use App\Match;
+use App\Prediction;
+use Carbon\Carbon;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-Route::get('/', function () {
-    return view('index');
+Route::get('/', function (Request $request) {
+
+
+    $matches = Match::all();
+
+    $userId = Auth::id();
+    $predictions = Prediction::where('user_id', $userId)->get();
+    $matchesArray = array();
+
+    $currentDate = Carbon::now();
+    $currentMonday = Carbon::now();
+    $currentMonday->modify('next monday');
+
+    $matches = Match::whereBetween('date_play', [$currentDate, $currentMonday])->get();
+
+    foreach($matches as $match) {
+        if (!$predictions->contains('match_id', $match->id) && $match->date_play >= $currentDate) {
+            $matchesArray[] = $match;
+        }
+    }
+
+    return view('index', compact('matchesArray'));
 });
 
 Auth::routes();
@@ -27,6 +51,10 @@ Route::get('/user/rang-list', 'UserController@rangList')->name('user.rang-list')
 Route::get('/user/tip-group-list', 'UserController@tipGroupList')->name('user.tip-group-list');
 Route::get('/user/tip-group-user-list', 'UserController@tipGroupUserList')->name('user.tip-group-user-list');
 Route::get('/user/tip-group/{id}', 'UserController@tipGroupUsers');
+
+Route::view('/sponsors', 'static.sponsors');
+Route::view('/preise', 'static.preise');
+Route::view('/monatspreise', 'static.monatspreise');
 
 Route::get('/tip-group', 'TipGroupController@index')->name('tip-group.index');
 Route::patch('/tip-group/{id}', 'TipGroupController@update')->name('tip-group.update');

@@ -9,7 +9,7 @@
         <div class="row justify-content-center">
           <div class="col-lg-8">
             <div class="banner-content text-center">
-              <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swisshockeyfan.ch</h1>
+              <h1 class="banner-title wow fadeIn" data-wow-duration="0.5s" data-wow-delay="1s">swiss-hockey-fan.ch</h1>
             </div>
           </div>
         </div>
@@ -25,14 +25,14 @@
       <div class="row justify-content-center">
         <div class="col-lg-8 mb-0 pb-0">
           <div class="section-header text-center">
-            <h2 class="section-title">Wir suchen den Swiss Hockey Fan 2019/2020</h2>
+            <h2 class="section-title no-uppercase">Wir suchen den Swiss Hockey Fan 2019/2020</h2>
             <p>Jetzt mitspielen und Swiss Hockey Fan werden</p>
           </div>
-          <p style="text-align: justify;">In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb wollen wir diesen Fans die Chance geben zu beweisen wieviel sie über ihre Lieblingsmannschaft und ihre Gegner wissen.
+          <p style="text-align: justify;">In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb wollen wir diesen Fans die Chance geben zu beweisen, wieviel sie über ihre Lieblingsmannschaft und ihre Gegner wissen.
             <br> <br>
-            Die Teilnehmer, welche sich online über die Homepage anmelden, haben die Chance bis 5min. vor jedem Spiel ihren Tipp zum Ausgang eines Spiels abzugeben. So können sie pro Spiel bis zu 5 Punkte erhalten.
+            Die Teilnehmer, welche sich online über die Homepage anmelden, haben die Chance bis 5 Min. vor jedem Spiel ihren Tipp zum Ausgang eines Spiels abzugeben. So können sie pro Spiel bis zu 5 Punkte erhalten.
             <br> <br>
-            Getippt werden kann auf die Spiele der Swiss Hockey NLA sowie die Hockey WM Spiele.
+            Getippt werden, kann auf die Spiele der Swiss Hockey NLA sowie die Hockey WM Spiele.
             <br> <br>
             Bei der Anmeldung wählen Sie, ob Sie nur für sich selber oder zusätzlich auch noch für eine Gruppe (z.B. ZSC Fangruppe) spielen wollen. Die besten Tipper werden als Monatssieger sowie Saisonsieger gekürt, ein Einstieg ist jederzeit möglich.
           </p>
@@ -69,33 +69,38 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>
-                            <div class="team-name-part">
-                              <i class="fas fa-hockey-puck"></i>
-                            </div>
-                          </td>
-                          <td>
-                            <form class="choice-team-part cmn-form">
-                              <input type="hidden" name="match_id" id="match_id" value="3">
-                              <input type="hidden" name="finished" id="finished" value="1">
-                              <div class="team frm-group">
-                                <label for="home_team" class="name">Barcelona</label>
-                                <input type="number" name="home_team" id="home_team" placeholder="Barcelona">
-                              </div>
-                              <div class="team frm-group">
-                                <label for="home_team" class="name">Real Madrid</label>
-                                <input type="number" name="away_team" id="c_fname" placeholder="Real Madrid">
-                              </div>
-                              <div class="team frm-group">
-                                  <button type="submit" class="single-item submit-button">Submit</button>
-                              </div>
+                        @foreach($matchesArray as $match)
+                          @if(!$match->finished && $match->date_play > \Carbon\Carbon::now())
+                            <tr>
+                              <td>
+                                <div class="team-name-part">
+                                  <i class="fas fa-hockey-puck"></i>
+                                </div>
+                              </td>
+                              <td>
+                                {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}
+                                  <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
+                                  <input type="hidden" name="finished" id="finished" value="1">
+                                  <div class="team frm-group">
+                                    <label for="home_score" class="name">{{$match->home_team}}</label>
+                                    <input type="number" name="home_score" id="home_score" placeholder="{{$match->home_team}}">
+                                  </div>
+                                  <div class="team frm-group">
+                                    <label for="away_score" class="name">{{$match->away_team}}</label>
+                                    <input type="number" name="away_score" id="c_fname" placeholder="{{$match->away_team}}">
+                                  </div>
+                                  <div class="team frm-group">
+                                    <button type="submit" class="single-item submit-button">Submit</button>
+                                  </div>
 
-                            </form>
-                          </td>
-                          <td>
-                            <span class="bet-count-num">16.11.2019 19:45</span>
-                          </td>
+                                {!! Form::close() !!}
+                              </td>
+                              <td>
+                                <span class="bet-count-num">{{$match->date_play}}</span>
+                              </td>
+                            </tr>
+                          @endif
+                        @endforeach
                       </tbody>
                     </table>
                   </div>
@@ -149,7 +154,7 @@
           </div>
         </div>
         <div class="thumb">
-          <img src="{{ asset('images/elements/app.png') }}" alt="youtube">
+          <img src="{{ asset('images/hockey.png') }}" alt="youtube">
         </div>
       </div>
     </div>
@@ -198,3 +203,29 @@
 
 @endsection
 
+@push('scripts')
+<script>
+$(document).ready(function(){
+    $('.customer-logos').slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: true,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
+});
+</script>
+@endpush

@@ -78,9 +78,9 @@
                                         <thead>
                                             <tr>
                                                 <th class="team-name" width="15%">Position</th>
-                                                <th class="team-name" rowspan="1" width="30%">First Name</th>
-                                                <th class="team-name" width="40%">Last Name</th>
-                                                <th class="team-name">Points</th>
+                                                <th class="team-name" rowspan="1" width="30%">Vorname</th>
+                                                <th class="team-name" width="40%">Nachname</th>
+                                                <th class="team-name">Punkte</th>
                                             </tr>
                                         </thead>
                                         <tbody>
