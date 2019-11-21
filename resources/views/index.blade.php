@@ -72,7 +72,7 @@
                         </tr>
                       </thead>
                       <tbody>
-                        @foreach($matches as $match)
+                        @foreach($matchesArray as $match)
                           @if(!$match->finished && $match->date_play > \Carbon\Carbon::now())
                             <tr>
                               <td>
@@ -81,22 +81,22 @@
                                 </div>
                               </td>
                               <td>
-                                <form class="choice-team-part cmn-form">
+                                {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}
                                   <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
                                   <input type="hidden" name="finished" id="finished" value="1">
                                   <div class="team frm-group">
-                                    <label for="home_team" class="name">{{$match->home_team}}</label>
-                                    <input type="number" name="home_team" id="home_team" placeholder="{{$match->home_team}}">
+                                    <label for="home_score" class="name">{{$match->home_team}}</label>
+                                    <input type="number" name="home_score" id="home_score" placeholder="{{$match->home_team}}">
                                   </div>
                                   <div class="team frm-group">
-                                    <label for="home_team" class="name">{{$match->away_team}}</label>
-                                    <input type="number" name="away_team" id="c_fname" placeholder="{{$match->away_team}}">
+                                    <label for="away_score" class="name">{{$match->away_team}}</label>
+                                    <input type="number" name="away_score" id="c_fname" placeholder="{{$match->away_team}}">
                                   </div>
                                   <div class="team frm-group">
                                     <button type="submit" class="single-item submit-button">Erstellen</button>
                                   </div>
 
-                                </form>
+                                {!! Form::close() !!}
                               </td>
                               <td>
                                 <span class="bet-count-num">{{$match->date_play}}</span>
