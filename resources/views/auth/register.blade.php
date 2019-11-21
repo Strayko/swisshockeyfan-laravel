@@ -49,30 +49,30 @@
                             <div class="frm-group">
                                 <input type="text" id="username" placeholder="Nachname *" name="username"
                                     value="{{ old('username') }}" required autocomplete="username" autofocus>
-                                @error('username')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                @if($errors->has('username'))
+                                    <span class="help-block">
+                                        <strong>{{$errors->first('username')}}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="frm-group">
                                 <input type="email" id="email" name="email" value="{{ old('email') }}"
                                     placeholder="{{ __('E-Mail') }}" required autocomplete="email">
-                                @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                @if($errors->has('email'))
+                                    <span class="help-block">
+                                        <strong>{{$errors->first('email')}}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="frm-group">
                                 <input type="password" name="password" id="password" required autocomplete="password"
                                     placeholder="Passwort">
 
-                                @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                                @enderror
+                                @if($errors->has('password'))
+                                    <span class="help-block">
+                                        <strong>{{$errors->first('password')}}</strong>
+                                    </span>
+                                @endif
                             </div>
                             <div class="frm-group">
                                 <input type="password" id="password-confirm" placeholder="Passwort bestätigen"
