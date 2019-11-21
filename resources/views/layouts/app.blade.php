@@ -100,8 +100,8 @@
                     </a>
                     <ul class="sub-menu">
                         <li><a href="/user/{{ Auth::user()->id }}/edit">Mein Profil</a></li>
-                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">Unsere Tippen</a></li>
-                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Logout') }}</a></li>
+                        <li><a href="{{ route('user.predictions', ['id' => Auth::id()]) }}">Unsere Tipps</a></li>
+                        <li><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >{{ __('Abmelden') }}</a></li>
 
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             @csrf
