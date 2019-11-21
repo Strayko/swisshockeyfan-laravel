@@ -23,7 +23,7 @@
                         @if(Auth::check())
                             <button type="submit" class="single-item submit-button">Submit</button>
                         @else
-                            <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Login') }}</a>
+                            <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
                         @endif
                     </div>
                 </form>
@@ -35,6 +35,6 @@
         </tr>
     @endforeach
 @else
-    <h1>No records</h1>
+    <h1>Kein Hockeyspiele Mehr</h1>
 @endif
 

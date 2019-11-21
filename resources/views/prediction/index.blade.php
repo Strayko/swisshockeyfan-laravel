@@ -30,12 +30,19 @@
                             <a class="month nav-link active" data-column_name="0" data-toggle="tab" href="#" role="tab"
                                 aria-controls="all" aria-selected="true">
                                 <i class="fas fa-list"></i>
-                                <span>All</span>
+                                <span>Alle Spiele</span>
                             </a>
                         </li>
                         <li class="nav-item">
+                                <a class="month nav-link" data-column_name="13" data-toggle="tab" href="#" role="tab"
+                                    aria-controls="all" aria-selected="true">
+                                    <i class="fas fa-calendar"></i>
+                                    <span>Heutige Spiele</span>
+                                </a>
+                        </li>
+                        <li class="nav-item">
                             <a class="month nav-link" data-column_name="11" data-toggle="tab" href="#november" role="tab"
-                                aria-controls="football" aria-selected="false">
+                                 aria-selected="false">
                                 <i class="far fa-calendar-alt"></i>
                                 <span>November</span>
                             </a>
@@ -59,13 +66,6 @@
                                 aria-controls="bascketball" aria-selected="false">
                                 <i class="far fa-calendar-alt"></i>
                                 <span>Februar</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="month nav-link" data-column_name="3" data-toggle="tab" href="#marz" role="tab"
-                                aria-controls="baseball" aria-selected="false">
-                                <i class="far fa-calendar-alt"></i>
-                                <span>Marz</span>
                             </a>
                         </li>
                     </ul>
