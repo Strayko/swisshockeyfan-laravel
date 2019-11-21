@@ -945,7 +945,9 @@ button.single-item.submit-button {
   margin-top: 15px;
 }
 /* step-section css end */
-
+.no-uppercase {
+    text-transform: none;
+}
 /* service-section css start */
 .service-section {
   overflow: hidden;
