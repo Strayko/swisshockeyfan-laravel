@@ -94,9 +94,9 @@
                                     <table>
                                         <thead>
                                             <tr>
-                                                <th class="team-name">Match</th>
+                                                <th class="team-name">Spiel</th>
                                                 <th class="choice-team">Tipp</th>
-                                                <th class="bet-num">Date</th>
+                                                <th class="bet-num">Datum</th>
                                             </tr>
                                         </thead>
                                         <tbody>
