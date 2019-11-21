@@ -93,7 +93,7 @@
                                     <input type="number" name="away_score" id="c_fname" placeholder="{{$match->away_team}}">
                                   </div>
                                   <div class="team frm-group">
-                                    <button type="submit" class="single-item submit-button">Erstellen</button>
+                                    <button type="submit" class="single-item submit-button">Prognosieren</button>
                                   </div>
 
                                 {!! Form::close() !!}
