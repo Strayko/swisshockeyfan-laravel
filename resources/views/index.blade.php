@@ -93,7 +93,13 @@
                                     <input type="number" name="away_score" id="c_fname" placeholder="{{$match->away_team}}">
                                   </div>
                                   <div class="team frm-group">
-                                    <button type="submit" class="single-item submit-button">Erstellen</button>
+
+                                    @if(Auth::check())
+                                      <button type="submit" class="single-item submit-button">Erstellen</button>
+                                    @else
+                                      <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
+                                    @endif
+
                                   </div>
 
                                 {!! Form::close() !!}

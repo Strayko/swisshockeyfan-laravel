@@ -68,7 +68,6 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-
         $authId = Auth::id();
         $user = User::findOrFail($id);
         $tipGroups = TipGroup::all();
@@ -77,7 +76,6 @@ class UserController extends Controller
         } else {
             return redirect('404');
         }
-
 
     }
 
