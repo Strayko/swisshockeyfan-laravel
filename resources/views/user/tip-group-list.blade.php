@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcum-content text-center">
-                        <h3 class="title">{{__('Rangliste Tippgroupen')}}
+                        <h3 class="title">{{__('Rangliste Tippgruppen')}}
 
                         </h3>
                     </div>
@@ -78,8 +78,8 @@
                                         <thead>
                                             <tr>
                                                 <th class="team-name" width="15%">Position</th>
-                                                <th class="team-name" rowspan="1" width="50%">Tippgroup</th>
-                                                <th class="team-name">Points</th>
+                                                <th class="team-name" rowspan="1" width="50%">Tippgruppe</th>
+                                                <th class="team-name">Punkte</th>
                                             </tr>
                                         </thead>
                                         <tbody>

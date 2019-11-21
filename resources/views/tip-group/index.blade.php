@@ -29,7 +29,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="team-name">Tippgroupe</th>
+                                    <th class="team-name">Tippgruppe</th>
                                     <th class="team-name"></th>
                                 </tr>
                             </thead>
