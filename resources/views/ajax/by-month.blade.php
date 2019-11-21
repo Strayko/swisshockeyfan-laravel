@@ -21,7 +21,7 @@
                     </div>
                     <div class="team frm-group">
                         @if(Auth::check())
-                            <button type="submit" class="single-item submit-button">Erstellen</button>
+                            <button type="submit" class="single-item submit-button">Prognosieren</button>
                         @else
                             <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
                         @endif
