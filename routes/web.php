@@ -41,7 +41,7 @@ Route::get('/', function (Request $request) {
     return view('index', compact('matchesArray'));
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/user', 'UserController@index')->name('user.index');
 Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit');
