@@ -879,16 +879,18 @@ button.single-item.submit-button {
     width: 100%;
     max-width: inherit;
     padding: 15px 20px;
-    margin-top: 31px;
+    margin-top: 27px;
 }
 
 .team.frm-group {
     display: flex;
     flex-direction: column;
+    min-width: 27%;
 }
 
 .team.frm-group label.name {
     font-weight: 800;
+    font-size: 13px;
 }
 
 .single-item {
