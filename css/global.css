@@ -310,6 +310,9 @@
 .section-bg {
   background-color: #f4f8f9;
 }
+.section-bg-dark {
+    background-color:#6d6f71;
+}
 .slick-slide:focus {
   outline: none;
 }
