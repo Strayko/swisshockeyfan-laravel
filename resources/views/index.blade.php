@@ -111,7 +111,7 @@
                                     <label for="home_score" class="name">{{$match->home_team}}</label>
                                     <div class="number-input">
                                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();event.preventDefault()" ></button>
-                                            <input type="number" name="home_score" id="home_score">
+                                            <input type="number" name="home_score" id="home_score" min="0" max="30">
                                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();event.preventDefault()" class="plus"></button>
                                     </div>
                                   </div>
@@ -119,7 +119,7 @@
                                     <label for="away_score" class="name">{{$match->away_team}}</label>
                                     <div class="number-input">
                                         <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();event.preventDefault()" ></button>
-                                            <input type="number" name="away_score" id="away_score">
+                                            <input type="number" name="away_score" id="away_score" min="0" max="30">
                                         <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();event.preventDefault()" class="plus"></button>
                                     </div>
 
