@@ -33,6 +33,6 @@
         </tr>
     @endforeach
 @else
-    <h1>Kein Hockeyspiele Mehr</h1>
+    <h1 class="p-5 text-center">Kein Hockeyspiele Mehr</h1>
 @endif
 

@@ -2358,3 +2358,17 @@ button.single-item.submit-button {
   color: var(--main-color);
 }
 /* footer-section css end */
+
+/* custom css */
+.confirmed-email {
+    padding: 250px 0;
+}
+h2.confirmed-email-title a {
+    text-decoration: underline;
+}
+h2.section-title.normal-text {
+    text-transform: inherit;
+}
+.btn-area a {
+    text-transform: inherit;
+}
