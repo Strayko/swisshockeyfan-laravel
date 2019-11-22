@@ -864,14 +864,11 @@ span.is-active:after {
 }
 
 .choice-team-part .number-input input[type=number] {
-    font-family: sans-serif;
     max-width: 5rem;
     padding: .5rem;
-    border: solid #ddd;
     border-width: 0 2px;
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: 3rem;
-    font-weight: bold;
     text-align: center;
 }
 
