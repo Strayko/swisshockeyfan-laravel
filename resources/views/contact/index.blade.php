@@ -28,7 +28,7 @@
               <i class="fa fa-home"></i>
             </div>
             <div class="content">
-              <h5 class="title">Addresse</h5>
+              <h5 class="title">Adresse</h5>
               <p>Firmen Event GmbH
               </p>
               <p>

@@ -33,9 +33,9 @@
           </div>
           <p style="text-align: justify;">In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb wollen wir diesen Fans die Chance geben zu beweisen, wieviel sie über ihre Lieblingsmannschaft und ihre Gegner wissen.
             <br> <br>
-            Die Teilnehmer, welche sich online über die Homepage anmelden, haben die Chance bis 5 Min. vor jedem Spiel ihren Tipp zum Ausgang eines Spiels abzugeben. So können sie pro Spiel bis zu 5 Punkte erhalten.
+            Die Teilnehmer, welche sich online über die Homepage anmelden, haben die Chance bis zu 5 Min. vor jedem Spiel ihren Tipp zum Ausgang eines Spiels abzugeben. So können sie pro Spiel bis zu 5 Punkte erhalten.
             <br> <br>
-            Getippt werden, kann auf die Spiele der Swiss Hockey NLA sowie die Hockey WM Spiele.
+            Getippt werden kann auf die Spiele der Swiss Hockey NLA sowie die Hockey WM Spiele.
             <br> <br>
             Bei der Anmeldung wählen Sie, ob Sie nur für sich selber oder zusätzlich auch noch für eine Gruppe (z.B. ZSC Fangruppe) spielen wollen. Die besten Tipper werden als Monatssieger sowie Saisonsieger gekürt, ein Einstieg ist jederzeit möglich.
           </p>
@@ -52,7 +52,7 @@
       <div class="row justify-content-center">
         <div class="col-lg-10">
           <div class="section-header text-center">
-            <h2 class="section-title">Prognostizieren & Jetzt spielen</h2>
+            <h2 class="section-title normal-text">Prognostizieren & jetzt spielen</h2>
           </div>
         </div>
       </div>
@@ -139,7 +139,7 @@
           </p>
           <ul class="app-features-list">
             <li><i class="fa fa-check"></i>Das Gruppenergebnis wird aus den 20 besten Resultaten der Gruppenteilnehmer
-              zusammengesetzt am Ende der Saison prämieren wir die Gruppensieger.
+              zusammengesetzt und am Ende der Saison prämieren wir die Gruppensieger.
             </li>
             <br>
             <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden mitte 2019

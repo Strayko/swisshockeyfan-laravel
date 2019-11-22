@@ -1,17 +1,16 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header"></div>
-                    <div class="card-body" style="margin: 150px 0 150px 0; text-align: center;">
-                        <h1 style="color:green;">Ihr Konto ist registriert</h1>
+    <section class="confirmed-email feature-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section-header text-center">
+                        <h2 class="section-title mb-5">Ihr Konto ist registriert</h2>
+                        <a href="{{ route('prediction.index') }}" class="btn btn-dark">Jetzt spielen</a>
                     </div>
                 </div>
             </div>
-
         </div>
-    </div>
+    </section>
 @endsection
