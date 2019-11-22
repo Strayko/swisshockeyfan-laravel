@@ -9,9 +9,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcum-content text-center">
-                        <h3 class="title">Rangliste Einzeln
-
-                        </h3>
+                        <h3 class="title">Rangliste Einzeln</h3>
                     </div>
                 </div>
             </div>
