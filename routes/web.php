@@ -46,6 +46,7 @@ Auth::routes();
 Route::group(['middleware' => 'auth'], function() {
     Route::get('/verify-account', 'VerificationApiController@show')->name('verification.notice');
 });
+Route::get('email/verify/{id}', 'VerificationApiController@verify')->name('verification.verify');
 
 Route::get('/user', 'UserController@index')->name('user.index');
 Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit')->middleware('verified');
