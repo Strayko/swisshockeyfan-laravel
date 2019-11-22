@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="breadcum-content text-center">
-                        <h3 class="title">Preise</h3>
+                        <h1 class="title">Preise</h1>
                     </div>
                 </div>
             </div>
@@ -44,12 +44,12 @@
                                                 </td>
                                                 <td>
                                                     <div class="team-name-part">
-                                                        Preis 1
+                                                        2 Übernachtungen - 2 Personen Huus Gstaad
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="team-name-part">
-                                                        ZUG
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -61,12 +61,12 @@
                                                 </td>
                                                 <td>
                                                     <div class="team-name-part">
-                                                        Preis 2
+                                                        Übernachtung - 2 Personen Hotel Rosatsch
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="team-name-part">
-                                                        ZUG
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -78,12 +78,12 @@
                                                 </td>
                                                 <td>
                                                     <div class="team-name-part">
-                                                        Preis 3
+                                                        Gutschein CHF 100.00 Gasthaus Wildenmann
                                                     </div>
                                                 </td>
                                                 <td>
                                                     <div class="team-name-part">
-                                                        ZUG
+
                                                     </div>
                                                 </td>
                                             </tr>
@@ -95,40 +95,145 @@
                                                     </td>
                                                     <td>
                                                         <div class="team-name-part">
-                                                            Preis 4
+                                                            EV Zug Trikot
                                                         </div>
                                                     </td>
                                                     <td>
                                                         <div class="team-name-part">
-                                                            ZUG
+                                                            EVZ
                                                         </div>
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                        <td>
-                                                            <div class="rank-name text-center">
-                                                                5.
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="team-name-part text-center">
-                                                                Preis 5
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="team-name-part">
-                                                                ZUG
-                                                            </div>
-                                                        </td>
-                                                    </tr>
+                                                    <td>
+                                                        <div class="rank-name text-center">
+                                                            5.
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part text-center">
+                                                            EV Zug Trikot
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part">
+                                                            EVZ
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="rank-name text-center">
+                                                            6.
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part text-center">
+                                                            Gutschein CHF 50.00 Pony Ranch Seewen
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part">
+                                                            Pony Ranch Seewen
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="rank-name text-center">
+                                                            7.
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part text-center">
+                                                            Icepeack Tasche
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part">
+                                                            Icepeack
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="rank-name text-center">
+                                                            8.
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part text-center">
+                                                            Icepeack Tasche
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part">
+                                                            Icepeack
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="rank-name text-center">
+                                                            9.
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part text-center">
+                                                            Icepeack Tasche
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part">
+                                                            Icepeack
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>
+                                                        <div class="rank-name text-center">
+                                                            10.
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part text-center">
+                                                            Icepeack Tasche
+                                                        </div>
+                                                    </td>
+                                                    <td>
+                                                        <div class="team-name-part">
+                                                            Icepeack
+                                                        </div>
+                                                    </td>
+                                                </tr>
                                         </tbody>
                                     </table>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div><!-- online-play-tab-part end -->
+                </div><!-- online-play-tab-part end -->
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-12">
+                <h3 class="mb-2">Ihr Gewinn wird per Post zugestellt!</h3>
+                <p>Wir wünschen Ihnen viel Spass mit Ihrem Gewinn…<br>
+                    Ihr Swiss Hockey Fan Tippspiel-Team</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-6">
+                <h3 class="mb-2">Gewinner Auslosung</h3>
+                <p>Die Gewinner werden per Email benachrichtigt.</p>
+                <p>Falls mehrere Gewinner mit der selben Punktzahl einen Rang belegen, wird aufgrund der Glückszahl, welche bei der Registrierung abgegeben wurde, ausgelost.</p>
+                <p>Eine Barauszahlung des Preises ist nicht möglich. Über das Gewinnspiel wird keine Korrespondenz geführt und der Rechtsweg ist ausgeschlossen.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="mb-2">Aktualisierung der Rangliste</h3>
+                <p>Die Rangliste & Punke der Spieler sind jeweils bis zum nächsten Morgen um 10.00 Uhr auf dem neusten Stand.</p>
+                <p>Spielverschiebungen können evtl. nicht berücksichtigt werden.</p>
+            </div>
         </div>
     </div>
     </div>
