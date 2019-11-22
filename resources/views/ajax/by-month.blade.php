@@ -10,20 +10,20 @@
                 {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}
                     <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
                     <input type="hidden" name="finished" id="finished" value="1">
-                    <div class="team frm-group number-input">
+                    <div class="team frm-group">
                         <label for="home_team" class="name">{{$match->home_team}}</label>
                         <div class="number-input">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); event.preventDefault()" ></button>
-                            {!! Form::number('home_score', null, ['id'=>'home_score']) !!}
+                            {!! Form::number('home_score', null, ['id'=>'home_score','min'=>'0', 'max'=>'30']) !!}
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); event.preventDefault()" class="plus"></button>
                         </div>
 
                     </div>
-                    <div class="team frm-group number-input">
+                    <div class="team frm-group">
                         <label for="home_team" class="name">{{$match->away_team}}</label>
                         <div class="number-input">
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();event.preventDefault()" ></button>
-                            {!! Form::number('away_score', null, ['id'=>'away_score']) !!}
+                            {!! Form::number('away_score', null, ['id'=>'away_score', 'min'=>'0', 'max'=>'30']) !!}
                             <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();event.preventDefault()" class="plus"></button>
                         </div>
                     </div>
