@@ -29,7 +29,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th class="team-name">Tippgruppe</th>
+                                    <th class="team-name">Tippgruppen</th>
                                     <th class="team-name"></th>
                                 </tr>
                             </thead>
@@ -67,10 +67,10 @@
                                     <td>
                                         <div class="team-name-part tip-group-link">
                                             @if(Auth::user()->tip_group_id == 0)
-                                            <input type="submit" value="Tippgruppe Beitreten"
+                                            <input type="submit" value="Tippgruppe beitretten"
                                                 class="single-item submit-button submit-tippgroup">
                                             @else
-                                            <input value="Tippgruppe Beitreten"
+                                            <input value="Tippgruppe beitretten"
                                                 class="single-item submit-button submit-tippgroup" disabled>
                                             @endif
                                         </div>
