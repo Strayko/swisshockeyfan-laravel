@@ -11,10 +11,7 @@
 @endif
 
 {{-- Intro Lines --}}
-@foreach ($introLines as $line)
-{{ $line }}
-
-@endforeach
+<p>Bitte klicken Sie auf die Schaltfläche unten, um Ihre E-Mail-Adresse zu bestätigen.</p>
 
 {{-- Action Button --}}
 @isset($actionText)
@@ -29,22 +26,19 @@
     }
 ?>
 @component('mail::button', ['url' => $actionUrl, 'color' => $color])
-{{ $actionText }}
+    Email Adresse bestätigen
 @endcomponent
 @endisset
 
 {{-- Outro Lines --}}
-@foreach ($outroLines as $line)
-{{ $line }}
-
-@endforeach
+<p>Wenn Sie kein Konto erstellt haben, ist keine weitere Aktion erforderlich.</p>
 
 {{-- Salutation --}}
 @if (! empty($salutation))
 {{ $salutation }}
 @else
 @lang('Grüße'),<br>
-{{ config('app.name') }}
+die-werber.ch
 @endif
 
 {{-- Subcopy --}}
