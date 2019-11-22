@@ -39,14 +39,16 @@ Route::get('/', function (Request $request) {
     }
 
     return view('index', compact('matchesArray'));
-})->middleware('verified');
+});
 
 Auth::routes();
 
-
+Route::group(['middleware' => 'auth'], function() {
+    Route::get('/verify-account', 'VerificationApiController@show')->name('verification.notice');
+});
 
 Route::get('/user', 'UserController@index')->name('user.index');
-Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit');
+Route::get('/user/{user}/edit', 'UserController@edit')->name('user.edit')->middleware('verified');
 Route::post('/user/{user}', 'UserController@update')->name('user.update');
 Route::get('/user/{user}/predictions', 'UserController@predictions')->name('user.predictions');
 Route::get('/user/rang-list', 'UserController@rangList')->name('user.rang-list');

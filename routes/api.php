@@ -25,4 +25,4 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('details', 'UsersApiController@details')->middleware('verified');
 });
 
-Route::get('/email', 'VerificationApiController@show')->name('verification.notice');
+
