@@ -26,7 +26,7 @@
                     <ul class="nav justify-content-around" id="myTab" role="tablist">
                         <li class="nav-item">
                             <a class="month nav-link" data-column_name="11" data-toggle="tab" href="#november" role="tab"
-                                 aria-selected="false">
+                                 aria-selected="true">
                                 <i class="far fa-calendar-alt"></i>
                                 <span>November</span>
                             </a>

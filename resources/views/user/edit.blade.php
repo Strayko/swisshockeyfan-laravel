@@ -69,7 +69,7 @@
 
                 <div class="frm-group">
                     <input type="password" name="password" id="password" required autocomplete="password"
-                        placeholder="Passwort">
+                        placeholder="Neues Passwort">
 
                     @error('password')
                     <span class="invalid-feedback" role="alert">
@@ -84,18 +84,18 @@
                 </div>
 
                 <div class="frm-group">
-                    <input id="mobilePhone" type="text" class="form-control @error('mobile_phone') is-invalid @enderror" name="mobile_phone" value="{{ old('mobile_phone', $user->mobile_phone) }}" required autocomplete="mobile_phone" autofocus>
+                    <input id="mobilePhone" type="text" name="mobile_phone"
+                           value="{{ old('mobile_phone', $user->mobile_phone) }}" required autocomplete="mobile_phone" placeholder="Handy Nr." autofocus>
 
-
-                @error('mobile_phone')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-                @enderror
+                    @error('mobile_phone')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                    @enderror
                 </div>
 
                 <div class="frm-group">
-                    <input id="telephone" type="text" name="telephone" value="{{ old('telephone', $user->telephone) }}">
+                    <input id="telephone" type="text" name="telephone" value="{{ old('telephone', $user->telephone) }}" placeholder="Telefon Nr.">
                     @error('telephone')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

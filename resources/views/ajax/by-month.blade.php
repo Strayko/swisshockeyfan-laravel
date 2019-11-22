@@ -8,16 +8,15 @@
             </td>
             <td>
                 {!! Form::open(['method'=>'POST', 'action'=>'PredictionController@store', 'class'=>'choice-team-part cmn-form']) !!}
-                <form class="choice-team-part cmn-form">
                     <input type="hidden" name="match_id" id="match_id" value="{{$match->id}}">
                     <input type="hidden" name="finished" id="finished" value="1">
                     <div class="team frm-group">
                         <label for="home_team" class="name">{{$match->home_team}}</label>
-                        {!! Form::text('home_score', null, ['id'=>'home_score']) !!}
+                        {!! Form::number('home_score', null, ['id'=>'home_score']) !!}
                     </div>
                     <div class="team frm-group">
                         <label for="home_team" class="name">{{$match->away_team}}</label>
-                        {!! Form::text('away_score', null, ['id'=>'away_score']) !!}
+                        {!! Form::number('away_score', null, ['id'=>'away_score']) !!}
                     </div>
                     <div class="team frm-group">
                         @if(Auth::check())
@@ -26,7 +25,6 @@
                             <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
                         @endif
                     </div>
-                </form>
                 {!! Form::close() !!}
             </td>
             <td>
