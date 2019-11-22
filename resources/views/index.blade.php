@@ -134,19 +134,19 @@
         <div class="content">
           <h2 class="title">swisshockeyfan</h2>
           <p>In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb
-            wollen wir diesen Fans die Chance geben zu beweisen wieviel sie über ihre Lieblingsmannschaft und ihre
+            wollen wir diesen Fans die Chance geben zu beweisen, wieviel sie über ihre Lieblingsmannschaft und ihre
             Gegner wissen.
           </p>
           <ul class="app-features-list">
             <li><i class="fa fa-check"></i>Das Gruppenergebnis wird aus den 20 besten Resultaten der Gruppenteilnehmer
-              zusammengesetzt und Ende Saison prämieren wir die Gruppensieger.
+              zusammengesetzt am Ende der Saison prämieren wir die Gruppensieger.
             </li>
             <br>
-            <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden Mitte 2019
+            <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden mitte 2019
               statt. Die Sieger werden vom OK kontaktiert.
             </li>
             <br>
-            <li><i class="fa fa-check"></i>Der Swiss Hockey Fan wird jedes Jahr neu gesucht. Wir wünschen Euch viel
+            <li><i class="fa fa-check"></i>Der Swiss Hockey Fan wird jedes Jahr neu gesucht. Wir wünschen euch viel
               Spass und Erfolg beim Tippen
             </li>
             <br>
@@ -154,10 +154,10 @@
           <div class="btn-area">
             @guest
             @if(Route::has('register'))
-                <a href="{{ route('register') }}" class="cmn-btn btn-lg"><i class="fa fa-play"></i>Jetz Spiele</a>
+                <a href="{{ route('register') }}" class="cmn-btn btn-lg"><i class="fa fa-play"></i>Registrierung</a>
             @endif
             @else
-                <a href="{{ route('prediction.index') }}" class="cmn-btn btn-lg"><i class="fa fa-play"></i>Jetz Spiele</a>
+                <a href="{{ route('prediction.index') }}" class="cmn-btn btn-lg"><i class="fa fa-play"></i>Jetz spiele</a>
             @endguest
 
           </div>
@@ -178,7 +178,7 @@
           <div class="section-header text-center">
             <h2 class="section-title">Spielanleitung</h2>
             <p>In der Schweiz ist Hockey ein Publikumssport und es gibt tolle Vereine mit vielen treuen Fans. Deshalb
-              wollen wir diesen Fans die Chance geben zu beweisen wieviel sie über ihre Lieblingsmannschaft und ihre
+              wollen wir diesen Fans die Chance geben zu beweisen, wieviel sie über ihre Lieblingsmannschaft und ihre
               Gegner wissen.</p>
           </div>
         </div>
@@ -187,7 +187,7 @@
         <div class="col-lg-4 col-md-4">
           <div class="step-item text-center">
             <div class="icon"><i class="fas fa-sign-in-alt"></i></div>
-            <h3 class="title">Jetz anmelden</h3>
+            <h3 class="title">Anmelden</h3>
             <!-- <p>Ye to misery wisdom plenty polite to as. Prepared interest proposal it he exercise.</p> -->
           </div>
         </div><!-- step-item end -->

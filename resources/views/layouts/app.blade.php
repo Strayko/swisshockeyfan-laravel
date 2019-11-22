@@ -152,7 +152,7 @@
                                 </ul>
                                 <form class="subscribe-form">
                                     <input type="email" name="subs-email" id="subs-email" class="subs-email"
-                                        placeholder="Email Addresse">
+                                        placeholder="E-Mail Adresse">
                                     <input type="submit" value="Anmelden" class="sub-btn">
                                 </form>
                             </div>
@@ -163,7 +163,7 @@
         </div><!-- footer-top end -->
         <div class="footer-bottom text-center">
             <div class="container">
-                <p>© swiss-hockey-fan.ch | Powered by Wettgame.ch & Swisswebprofi.ch | <a href="https://die-werber.ch"> Die Werber</a></p>
+                <p>© swiss-hockey-fan.ch | Powered by Wettgame.ch & | <a href="https://die-werber.ch"> Die Werber</a></p>
             </div>
         </div>
     </footer>
