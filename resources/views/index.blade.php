@@ -127,7 +127,7 @@
                                   <div class="team frm-group">
 
                                     @if(Auth::check())
-                                      <button type="submit" class="single-item submit-button">Erstellen</button>
+                                      <button type="submit" class="single-item submit-button">Prognosieren</button>
                                     @else
                                       <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
                                     @endif
@@ -137,7 +137,7 @@
                                 {!! Form::close() !!}
                               </td>
                               <td>
-                                <span class="bet-count-num">{{$match->date_play}}</span>
+                                <span class="bet-count-num match-date">{{$match->date_play}}</span>
                               </td>
                             </tr>
                           @endif
@@ -174,7 +174,7 @@
               zusammengesetzt und am Ende der Saison prämieren wir die Gruppensieger.
             </li>
             <br>
-            <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden mitte 2019
+            <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden mitte 2020
               statt. Die Sieger werden vom OK kontaktiert.
             </li>
             <br>
