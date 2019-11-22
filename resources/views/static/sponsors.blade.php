@@ -24,7 +24,7 @@
             <div class="app-content sponsors-content d-flex">
                 <div class="content">
                     <div class="sponsors-list">
-                        <h2 class="sponsors-title">Premium Sposoren</h2>
+                        <h2 class="sponsors-title">Premium Sponsoren</h2>
                         <div class="row sponsors">
                             <div class="col-lg-4 align-center">
                                 <img src="{{ asset('images/sponsors/kunstrasenprofi.png') }}" alt="">
