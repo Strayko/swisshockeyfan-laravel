@@ -66,7 +66,7 @@
                             </div>
                             <div class="frm-group">
                                 <input type="password" name="password" id="password" required autocomplete="password"
-                                    placeholder="Passwort">
+                                    placeholder="Passwort *">
 
                                 @if($errors->has('password'))
                                     <span class="help-block">
@@ -75,7 +75,7 @@
                                 @endif
                             </div>
                             <div class="frm-group">
-                                <input type="password" id="password-confirm" placeholder="Passwort bestätigen"
+                                <input type="password" id="password-confirm" placeholder="Passwort bestätigen *"
                                     name="password_confirmation" required autocomplete="password">
                             </div>
                             <div class="frm-group">
@@ -99,7 +99,7 @@
                             <div class="frm-group">
                                 <input id="street" type="text" class="@error('street') is-invalid @enderror"
                                     name="street" value="{{ old('street') }}" required autocomplete="street" autofocus
-                                    placeholder="Strasse" />
+                                    placeholder="Strasse *" />
                                 @error('street')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -108,7 +108,7 @@
                             </div>
                             <div class="frm-group">
                                 <input id="post-code" type="text" name="post_code"
-                                    value="{{ old('post_code') }}" required autocomplete="post_code" autofocus placeholder="Postleitzahl"/>
+                                    value="{{ old('post_code') }}" required autocomplete="post_code" autofocus placeholder="Postleitzahl *"/>
                                 @error('post_code')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -117,7 +117,7 @@
                             </div>
                             <div class="frm-group">
                                 <input id="place" type="text" type="text" class="@error('place') is-invalid @enderror"
-                                    name="place" value="{{ old('place') }}" required autocomplete="place" autofocus placeholder="Ort">
+                                    name="place" value="{{ old('place') }}" required autocomplete="place" autofocus placeholder="Ort *">
 
                                 @error('place')
                                 <span class="invalid-feedback" role="alert">

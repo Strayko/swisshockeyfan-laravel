@@ -50,9 +50,9 @@
    <section class="play-section section-padding section-bg">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-6">
+        <div class="col-lg-10">
           <div class="section-header text-center">
-            <h2 class="section-title">Predict & Play Now</h2>
+            <h2 class="section-title">Prognostizieren & Jetzt spielen</h2>
           </div>
         </div>
       </div>
@@ -86,11 +86,11 @@
                                   <input type="hidden" name="finished" id="finished" value="1">
                                   <div class="team frm-group">
                                     <label for="home_score" class="name">{{$match->home_team}}</label>
-                                    <input type="number" name="home_score" id="home_score" placeholder="{{$match->home_team}}">
+                                    <input type="number" name="home_score" id="home_score">
                                   </div>
                                   <div class="team frm-group">
                                     <label for="away_score" class="name">{{$match->away_team}}</label>
-                                    <input type="number" name="away_score" id="c_fname" placeholder="{{$match->away_team}}">
+                                    <input type="number" name="away_score" id="c_fname"">
                                   </div>
                                   <div class="team frm-group">
 
