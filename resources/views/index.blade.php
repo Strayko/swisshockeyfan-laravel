@@ -45,6 +45,29 @@
     </div>
    </section>
   <!-- feature-section end -->
+  <section class="sponsors-section section-padding section-bg-dark">
+      <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="section-header text-center">
+                    <h2 class="section-title text-white">Sponsoren</h2>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-lg-12">
+                 <div class="customer-logos slider">
+                        <div class="slide"><img src="{{ asset('images/sponsors/kunstrasenprofi.png') }}"></div>
+                        <div class="slide"><img src="{{ asset('images/sponsors/outtec.png') }}"></div>
+                        <div class="slide"><img src="{{ asset('images/sponsors/koenig.png') }}"></div>
+                        <div class="slide"><img src="{{ asset('images/sponsors/diewerber.png') }}"></div>
+                        <div class="slide"><img src="{{ asset('images/sponsors/chesselhuus.png') }}"></div>
+                        <div class="slide"><img src="{{ asset('images/sponsors/cleanliness.png') }}"></div>
+                 </div>
+              </div>
+          </div>
+      </div>
+  </section>
 
     <!-- play-section start -->
    <section class="play-section section-padding section-bg">
@@ -86,16 +109,25 @@
                                   <input type="hidden" name="finished" id="finished" value="1">
                                   <div class="team frm-group">
                                     <label for="home_score" class="name">{{$match->home_team}}</label>
-                                    <input type="number" name="home_score" id="home_score">
+                                    <div class="number-input">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();event.preventDefault()" ></button>
+                                            <input type="number" name="home_score" id="home_score" min="0" max="30">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();event.preventDefault()" class="plus"></button>
+                                    </div>
                                   </div>
                                   <div class="team frm-group">
                                     <label for="away_score" class="name">{{$match->away_team}}</label>
-                                    <input type="number" name="away_score" id="c_fname"">
+                                    <div class="number-input">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();event.preventDefault()" ></button>
+                                            <input type="number" name="away_score" id="away_score" min="0" max="30">
+                                        <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();event.preventDefault()" class="plus"></button>
+                                    </div>
+
                                   </div>
                                   <div class="team frm-group">
 
                                     @if(Auth::check())
-                                      <button type="submit" class="single-item submit-button">Erstellen</button>
+                                      <button type="submit" class="single-item submit-button">Prognosieren</button>
                                     @else
                                       <a href="{{ route('login') }}" class="single-item submit-button">{{ __('Einloggen') }}</a>
                                     @endif
@@ -105,7 +137,7 @@
                                 {!! Form::close() !!}
                               </td>
                               <td>
-                                <span class="bet-count-num">{{$match->date_play}}</span>
+                                <span class="bet-count-num match-date">{{$match->date_play}}</span>
                               </td>
                             </tr>
                           @endif
@@ -142,7 +174,7 @@
               zusammengesetzt und am Ende der Saison prämieren wir die Gruppensieger.
             </li>
             <br>
-            <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden mitte 2019
+            <li><i class="fa fa-check"></i>Der Abschluss und die Preisverleihung der Gesamtsieger finden mitte 2020
               statt. Die Sieger werden vom OK kontaktiert.
             </li>
             <br>
@@ -219,6 +251,37 @@ $(document).ready(function(){
         console.log($("#feature-section").offset().top)
         $("html, body").animate({ scrollTop: $("#feature-section").offset().top}, 500);
     })
+
+    let dates = document.querySelectorAll('.match-date')
+    moment.locale('de');
+
+    dates.forEach(el => {
+        let dateTime = new Date(el.innerText);
+        el.innerText = moment(dateTime).format('DD MMMM YYYY HH:mm');
+
+        return el;
+    })
+
+    $('.customer-logos').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: false,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 4
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
 });
 </script>
 @endpush

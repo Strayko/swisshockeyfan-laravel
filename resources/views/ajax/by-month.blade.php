@@ -12,11 +12,20 @@
                     <input type="hidden" name="finished" id="finished" value="1">
                     <div class="team frm-group">
                         <label for="home_team" class="name">{{$match->home_team}}</label>
-                        {!! Form::number('home_score', null, ['id'=>'home_score']) !!}
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown(); event.preventDefault()" ></button>
+                            {!! Form::number('home_score', null, ['id'=>'home_score','min'=>'0', 'max'=>'30']) !!}
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp(); event.preventDefault()" class="plus"></button>
+                        </div>
+
                     </div>
                     <div class="team frm-group">
                         <label for="home_team" class="name">{{$match->away_team}}</label>
-                        {!! Form::number('away_score', null, ['id'=>'away_score']) !!}
+                        <div class="number-input">
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepDown();event.preventDefault()" ></button>
+                            {!! Form::number('away_score', null, ['id'=>'away_score', 'min'=>'0', 'max'=>'30']) !!}
+                            <button onclick="this.parentNode.querySelector('input[type=number]').stepUp();event.preventDefault()" class="plus"></button>
+                        </div>
                     </div>
                     <div class="team frm-group">
                         @if(Auth::check())
@@ -35,4 +44,12 @@
 @else
     <h1 class="p-5 text-center">Kein Hockeyspiele Mehr</h1>
 @endif
+
+@push('scripts')
+<script>
+$('form').on('click', 'button:not([type="submit"])', function(e){
+  e.preventDefault();
+})
+</script>
+@endpush
 
